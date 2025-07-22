@@ -10,8 +10,9 @@ import Features from "@/components/features";
 import Testimonials from "@/components/testimonials";
 import Cta from "@/components/cta";
 import { WorldMapDemo } from "@/components/world-map";
-// import { FeaturesSectionDemo } from "@/components/features1";
+import { FeaturesSectionDemo1 } from "@/components/features1";
 import { FeaturesSectionDemo } from "@/components/feature2";
+import { FollowingPointerDemo } from "@/components/following-pointer";
 
 export default function Home() {
   return (
@@ -19,7 +20,9 @@ export default function Home() {
       {/* <PageIllustration /> */}
       {/* <WorldMapDemo /> */}
       <Hero />
+      <FeaturesSectionDemo1 />
       <FeaturesSectionDemo />
+      <FollowingPointerDemo />
       <Workflows />
       <Features />
       <Testimonials />
