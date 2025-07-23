@@ -15,6 +15,7 @@ import { FeaturesSectionDemo } from "@/components/feature2";
 import { FollowingPointerDemo } from "@/components/following-pointer";
 import { CometCardDemo } from "@/components/comet-card-demo";
 import { GlobeDemo } from "@/components/globe-demo";
+import { GoogleGeminiEffectDemo } from "@/components/gemini-connection";
 
 export default function Home() {
   return (
@@ -24,7 +25,8 @@ export default function Home() {
       <Hero />
       <FeaturesSectionDemo />
       <FeaturesSectionDemo1 />
-      <GlobeDemo />
+      {/* <GlobeDemo /> */}
+      <GoogleGeminiEffectDemo />
       {/* <CometCardDemo /> */}
       {/* <FollowingPointerDemo /> */}
       <Workflows />
