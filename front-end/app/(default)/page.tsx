@@ -17,6 +17,8 @@ import { CometCardDemo } from "@/components/comet-card-demo";
 import { GlobeDemo } from "@/components/globe-demo";
 import { GoogleGeminiEffectDemo } from "@/components/gemini-connection";
 import { TypewriterEffectSmoothDemo } from "@/components/typewitter-effect-demo";
+import { ColourfulTextDemo } from "@/components/custom-dashboard";
+
 export default function Home() {
   return (
     <>
@@ -25,6 +27,7 @@ export default function Home() {
       <Hero />
       <FeaturesSectionDemo />
       <FeaturesSectionDemo1 />
+      <ColourfulTextDemo />
       {/* <GlobeDemo /> */}
       {/* <TypewriterEffectSmoothDemo /> */}
       <GoogleGeminiEffectDemo />

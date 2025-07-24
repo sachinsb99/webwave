@@ -7,7 +7,8 @@ import { useEffect, useRef } from "react";
 import { motion } from "motion/react";
 import { IconBrandYoutubeFilled } from "@tabler/icons-react";
 import { FollowingPointerDemo } from "@/components/following-pointer";
-import { CometCardDemo } from "@/components/comet-card-demo";
+// import { CometCardDemo } from "@/components/comet-card-demo";
+import { ColourfulTextDemo } from "@/components/custom-dashboard";
 
 
 export function FeaturesSectionDemo1() {
@@ -113,7 +114,8 @@ export const SkeletonOne = () => {
       {/* <div className="w-full  p-5  mx-auto bg-white dark:bg-neutral-900 shadow-2xl group h-full">
         <div className="flex flex-1 w-full h-full flex-col space-y-2  "> */}
           {/* TODO */}
-          <CometCardDemo />
+          {/* <CometCardDemo /> */}
+          <ColourfulTextDemo />
         {/* </div>
       </div> */}
 
