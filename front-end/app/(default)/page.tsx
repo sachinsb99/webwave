@@ -16,7 +16,7 @@ import { FollowingPointerDemo } from "@/components/following-pointer";
 import { CometCardDemo } from "@/components/comet-card-demo";
 import { GlobeDemo } from "@/components/globe-demo";
 import { GoogleGeminiEffectDemo } from "@/components/gemini-connection";
-
+import { TypewriterEffectSmoothDemo } from "@/components/typewitter-effect-demo";
 export default function Home() {
   return (
     <>
@@ -26,6 +26,7 @@ export default function Home() {
       <FeaturesSectionDemo />
       <FeaturesSectionDemo1 />
       {/* <GlobeDemo /> */}
+      {/* <TypewriterEffectSmoothDemo /> */}
       <GoogleGeminiEffectDemo />
       {/* <CometCardDemo /> */}
       {/* <FollowingPointerDemo /> */}
