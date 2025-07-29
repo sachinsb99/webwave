@@ -18,15 +18,18 @@ import { GlobeDemo } from "@/components/globe-demo";
 import { GoogleGeminiEffectDemo } from "@/components/gemini-connection";
 import { TypewriterEffectSmoothDemo } from "@/components/typewitter-effect-demo";
 import { ColourfulTextDemo } from "@/components/custom-dashboard";
-import { HeroScrollDemo } from "@/components/container-scroll-animation-demo"
+import { HeroScrollDemo } from "@/components/container-scroll-animation-demo";
+import HeroUI from "@/components/heros";
+import { PointerHighlightDemo } from "@/components/pointer-highlighter";
 
 export default function Home() {
   return (
     <>
       {/* <PageIllustration /> */}
       {/* <WorldMapDemo /> */}
-      <Hero />
-      
+      {/* <Hero /> */}
+      <HeroUI />
+      <PointerHighlightDemo />
       <FeaturesSectionDemo />
       <HeroScrollDemo />
       <FeaturesSectionDemo1 />
