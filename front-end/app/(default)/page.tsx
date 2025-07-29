@@ -21,6 +21,7 @@ import { ColourfulTextDemo } from "@/components/custom-dashboard";
 import { HeroScrollDemo } from "@/components/container-scroll-animation-demo";
 import HeroUI from "@/components/heros";
 import { PointerHighlightDemo } from "@/components/pointer-highlighter";
+import { SVGMaskEffectDemo } from "@/components/mask-effect";
 
 export default function Home() {
   return (
@@ -31,6 +32,7 @@ export default function Home() {
       <HeroUI />
       <PointerHighlightDemo />
       <FeaturesSectionDemo />
+      <SVGMaskEffectDemo />
       <HeroScrollDemo />
       <FeaturesSectionDemo1 />
       <ColourfulTextDemo />
@@ -40,7 +42,7 @@ export default function Home() {
       {/* <CometCardDemo /> */}
       {/* <FollowingPointerDemo /> */}
       <Workflows />
-      <Features />
+      {/* <Features /> */}
       <Testimonials />
       {/* <Cta /> */}
     </>
