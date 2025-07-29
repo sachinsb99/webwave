@@ -18,6 +18,7 @@ import { GlobeDemo } from "@/components/globe-demo";
 import { GoogleGeminiEffectDemo } from "@/components/gemini-connection";
 import { TypewriterEffectSmoothDemo } from "@/components/typewitter-effect-demo";
 import { ColourfulTextDemo } from "@/components/custom-dashboard";
+import { HeroScrollDemo } from "@/components/container-scroll-animation-demo"
 
 export default function Home() {
   return (
@@ -25,7 +26,9 @@ export default function Home() {
       {/* <PageIllustration /> */}
       {/* <WorldMapDemo /> */}
       <Hero />
+      
       <FeaturesSectionDemo />
+      <HeroScrollDemo />
       <FeaturesSectionDemo1 />
       <ColourfulTextDemo />
       {/* <GlobeDemo /> */}

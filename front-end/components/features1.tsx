@@ -9,18 +9,12 @@ import { IconBrandYoutubeFilled } from "@tabler/icons-react";
 import { FollowingPointerDemo } from "@/components/following-pointer";
 // import { CometCardDemo } from "@/components/comet-card-demo";
 import { ColourfulTextDemo } from "@/components/custom-dashboard";
+import { GlobeDemo } from "@/components/globe-demo";
 
 
 export function FeaturesSectionDemo1() {
   const features = [
-    {
-      title: "Track issues effectively",
-      description:
-        "Track and manage your project issues with ease using our intuitive interface.",
-      skeleton: <SkeletonOne />,
-      className:
-        "col-span-1 lg:col-span-4 border-b lg:border-r dark:border-neutral-800",
-    },
+
     {
       title: "Watch our AI on YouTube",
       description:
@@ -101,22 +95,7 @@ const FeatureDescription = ({ children }: { children?: React.ReactNode }) => {
   );
 };
 
-export const SkeletonOne = () => {
-  return (
-    <div className="relative flex py-8 px-2 gap-8 h-full">
-      {/* <div className="w-full  p-5  mx-auto bg-white dark:bg-neutral-900 shadow-2xl group h-full">
-        <div className="flex flex-1 w-full h-full flex-col space-y-2  "> */}
-          {/* TODO */}
-          {/* <CometCardDemo /> */}
-          <ColourfulTextDemo />
-        {/* </div>
-      </div> */}
 
-      {/* <div className="absolute bottom-0 z-40 inset-x-0 h-60 bg-gradient-to-t from-white dark:from-black via-white dark:via-black to-transparent w-full pointer-events-none" />
-      <div className="absolute top-0 z-40 inset-x-0 h-60 bg-gradient-to-b from-white dark:from-black via-transparent to-transparent w-full pointer-events-none" /> */}
-    </div>
-  );
-};
 
 export const SkeletonThree = () => {
   return (
@@ -141,7 +120,8 @@ export const SkeletonThree = () => {
 export const SkeletonFour = () => {
   return (
     <div className="h-60 md:h-60  flex flex-col items-center relative bg-transparent dark:bg-transparent mt-10">
-      <Globe className="absolute -right-10 md:-right-10 -bottom-80 md:-bottom-72" />
+      {/* <Globe className="absolute -right-10 md:-right-10 -bottom-80 md:-bottom-72" /> */}
+      <GlobeDemo />
     </div>
   );
 };
