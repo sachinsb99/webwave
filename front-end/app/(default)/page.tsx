@@ -22,6 +22,7 @@ import { HeroScrollDemo } from "@/components/container-scroll-animation-demo";
 import HeroUI from "@/components/heros";
 import { PointerHighlightDemo } from "@/components/pointer-highlighter";
 import { SVGMaskEffectDemo } from "@/components/mask-effect";
+import { TimelineDemo } from "@/components/timeline-demo";
 
 export default function Home() {
   return (
@@ -34,6 +35,7 @@ export default function Home() {
       <FeaturesSectionDemo />
       <SVGMaskEffectDemo />
       <HeroScrollDemo />
+      <TimelineDemo />
       <FeaturesSectionDemo1 />
       <ColourfulTextDemo />
       {/* <GlobeDemo /> */}
