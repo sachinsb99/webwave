@@ -17,15 +17,8 @@ import HouseViewer from "@/components/HouseViewer";
 import { ThreeDMarqueeDemoSecond } from "@/components/3d-marquee-demo";
 import BackgroundGradientDemo from "@/components/background-gradient-demo";
 import PropertyCarousel from '@/components/PropertyCarousel';
-
-// export default function HomePage() {
-//   return (
-//     <main>
-//       <BackgroundGradientDemo />
-//     </main>
-//   );
-// }
-
+import HeroUI from "@/components/heros";
+import { BackgroundBeamsWithCollisionDemo } from "@/components/background-collision";
 
 import { Metadata } from "next";
 
@@ -50,17 +43,11 @@ export default function Home() {
   return (
     <>
       <ScrollUp />
-      {/* <main className="min-h-screen bg-black text-white"> */}
-      {/* Any existing content here */}
-      {/* <ThreeDMarqueeDemoSecond /> */}
-      {/* <main>
+      <BackgroundBeamsWithCollisionDemo />
+      <HeroUI />
       {/* <BackgroundBeams /> */}
       {/* <GlowingEffectDemo /> */}
       <Features />
-      <div>
-      <h1 className="text-2xl font-bold text-center mt-6">Featured Properties</h1>
-      <PropertyCarousel />
-    </div>
       {/* <CardHoverEffectDemo /> */}
       <Video />
       <Brands />
