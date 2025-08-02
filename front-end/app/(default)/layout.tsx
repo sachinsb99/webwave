@@ -6,6 +6,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 import Footer from "@/components/ui/footer";
+import { Providers } from "./providers";
 
 export default function DefaultLayout({
   children,
@@ -23,8 +24,9 @@ export default function DefaultLayout({
 
   return (
     <>
+      <Providers>
       <main className="relative flex grow flex-col">{children}</main>
-
+      </Providers>
       <Footer />
     </>
   );

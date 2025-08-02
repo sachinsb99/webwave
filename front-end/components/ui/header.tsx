@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Logo from "./logo";
+import ThemeToggler from "./ThemeToggler";
 
 export default function Header() {
   return (
@@ -32,6 +33,9 @@ export default function Header() {
               </Link>
             </li>
           </ul>
+          <div>
+            <ThemeToggler />
+          </div>
         </div>
       </div>
     </header>
