@@ -4,7 +4,7 @@ import Blog from "@/components/Blog";
 import Brands from "@/components/Brands";
 import ScrollUp from "@/components/Common/ScrollUp";
 import Contact from "@/components/Contact";
-// import Features from "@/components/features";
+// import Features from "@/components/Features";
 import Hero from "@/components/Hero";
 import Pricing from "@/components/Pricing";
 import Testimonials from "@/components/Testimonials";
@@ -18,8 +18,6 @@ import PropertyCarousel from '@/components/PropertyCarousel';
 import HeroUI from "@/components/heros";
 import { BackgroundBeamsWithCollisionDemo } from "@/components/background-collision";
 import { ContainerTextFlipDemo } from "@/components/container-text-flip";
-import { GlobeDemo } from "@/components/globe-demo";
-import { GoogleGeminiEffectDemo } from "@/components/gemini-connection";
 
 import { Metadata } from "next";
 
@@ -34,8 +32,6 @@ export default function Home() {
     <>
       <ScrollUp />
       <BackgroundBeamsWithCollisionDemo />
-      
-      
       {/* <ContainerTextFlipDemo /> */}
       {/* <HeroUI /> */}
       {/* <BackgroundBeams /> */}
@@ -47,9 +43,7 @@ export default function Home() {
       <AboutSectionTwo />
       <Testimonials />
       <Pricing />
-      <GoogleGeminiEffectDemo />
-      {/* <Blog /> */}
-      <GlobeDemo />
+      <Blog />
       <Contact />
     </>
   );
