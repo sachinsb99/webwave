@@ -20,6 +20,7 @@ import { BackgroundBeamsWithCollisionDemo } from "@/components/background-collis
 import { ContainerTextFlipDemo } from "@/components/container-text-flip";
 import { GlobeDemo } from "@/components/globe-demo";
 import { GoogleGeminiEffectDemo } from "@/components/gemini-connection";
+import { FeaturesSectionDemo } from "@/components/feature2";
 
 import { Metadata } from "next";
 
@@ -34,7 +35,7 @@ export default function Home() {
     <>
       <ScrollUp />
       <BackgroundBeamsWithCollisionDemo />
-      
+      <FeaturesSectionDemo />
       
       {/* <ContainerTextFlipDemo /> */}
       {/* <HeroUI /> */}
