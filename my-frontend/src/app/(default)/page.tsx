@@ -21,6 +21,7 @@ import { ContainerTextFlipDemo } from "@/components/container-text-flip";
 import { GlobeDemo } from "@/components/globe-demo";
 import { GoogleGeminiEffectDemo } from "@/components/gemini-connection";
 import { FeaturesSectionDemo } from "@/components/feature2";
+import { TimelineDemo } from "@/components/timeline-demo";
 
 import { Metadata } from "next";
 
@@ -36,6 +37,7 @@ export default function Home() {
       <ScrollUp />
       <BackgroundBeamsWithCollisionDemo />
       <FeaturesSectionDemo />
+      <TimelineDemo />
       
       {/* <ContainerTextFlipDemo /> */}
       {/* <HeroUI /> */}
@@ -44,9 +46,9 @@ export default function Home() {
       {/* <CardHoverEffectDemo /> */}
       {/* <Brands /> */}
       {/* <FeaturesSectionDemo1 /> */}
-      <AboutSectionOne />
-      <AboutSectionTwo />
-      <Testimonials />
+      {/* <AboutSectionOne /> */}
+      {/* <AboutSectionTwo /> */}
+      {/* <Testimonials /> */}
       <Pricing />
       <GoogleGeminiEffectDemo />
       {/* <Blog /> */}
