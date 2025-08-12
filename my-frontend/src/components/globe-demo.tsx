@@ -336,45 +336,45 @@ export function GlobeDemo() {
             variants={containerVariants}
             className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6"
           >
-            <motion.div variants={itemVariants} className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg rounded-2xl p-6 shadow-xl border border-white/20">
-              <div className="flex items-center space-x-3 mb-3">
-                <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold">⚡</span>
-                </div>
-                <h3 className="text-lg font-semibold text-gray-800 dark:text-white">Lightning Fast</h3>
-              </div>
-              <p className="text-gray-600 dark:text-gray-300 text-sm">Delivering excellence at the speed of light with our optimized infrastructure.</p>
-            </motion.div>
+           <motion.div variants={itemVariants} className="bg-transparent hover:bg-white/80 dark:hover:bg-gray-800/80 backdrop-blur-lg rounded-2xl p-6 shadow-xl border border-white/20 transition-colors duration-300">
+  <div className="flex items-center space-x-3 mb-3">
+    <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+      <span className="text-white font-bold">⚡</span>
+    </div>
+    <h3 className="text-lg font-semibold text-gray-800 dark:text-white">Lightning Fast</h3>
+  </div>
+  <p className="text-gray-600 dark:text-gray-300 text-sm">Delivering excellence at the speed of light with our optimized infrastructure.</p>
+</motion.div>
 
-            <motion.div variants={itemVariants} className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg rounded-2xl p-6 shadow-xl border border-white/20">
-              <div className="flex items-center space-x-3 mb-3">
-                <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-blue-600 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold">🌍</span>
-                </div>
-                <h3 className="text-lg font-semibold text-gray-800 dark:text-white">Global Reach</h3>
-              </div>
-              <p className="text-gray-600 dark:text-gray-300 text-sm">Connecting continents with seamless service delivery worldwide.</p>
-            </motion.div>
+<motion.div variants={itemVariants} className="bg-transparent hover:bg-white/80 dark:hover:bg-gray-800/80 backdrop-blur-lg rounded-2xl p-6 shadow-xl border border-white/20 transition-colors duration-300">
+  <div className="flex items-center space-x-3 mb-3">
+    <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-blue-600 rounded-lg flex items-center justify-center">
+      <span className="text-white font-bold">🌍</span>
+    </div>
+    <h3 className="text-lg font-semibold text-gray-800 dark:text-white">Global Reach</h3>
+  </div>
+  <p className="text-gray-600 dark:text-gray-300 text-sm">Connecting continents with seamless service delivery worldwide.</p>
+</motion.div>
 
-            <motion.div variants={itemVariants} className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg rounded-2xl p-6 shadow-xl border border-white/20">
-              <div className="flex items-center space-x-3 mb-3">
-                <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-600 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold">🏆</span>
-                </div>
-                <h3 className="text-lg font-semibold text-gray-800 dark:text-white">Award Winning</h3>
-              </div>
-              <p className="text-gray-600 dark:text-gray-300 text-sm">Recognized excellence in service innovation and customer satisfaction.</p>
-            </motion.div>
+<motion.div variants={itemVariants} className="bg-transparent hover:bg-white/80 dark:hover:bg-gray-800/80 backdrop-blur-lg rounded-2xl p-6 shadow-xl border border-white/20 transition-colors duration-300">
+  <div className="flex items-center space-x-3 mb-3">
+    <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-600 rounded-lg flex items-center justify-center">
+      <span className="text-white font-bold">🏆</span>
+    </div>
+    <h3 className="text-lg font-semibold text-gray-800 dark:text-white">Award Winning</h3>
+  </div>
+  <p className="text-gray-600 dark:text-gray-300 text-sm">Recognized excellence in service innovation and customer satisfaction.</p>
+</motion.div>
 
-            <motion.div variants={itemVariants} className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg rounded-2xl p-6 shadow-xl border border-white/20">
-              <div className="flex items-center space-x-3 mb-3">
-                <div className="w-10 h-10 bg-gradient-to-r from-orange-500 to-red-600 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold">🔒</span>
-                </div>
-                <h3 className="text-lg font-semibold text-gray-800 dark:text-white">Secure & Reliable</h3>
-              </div>
-              <p className="text-gray-600 dark:text-gray-300 text-sm">Bank-grade security with 99.9% uptime guarantee for peace of mind.</p>
-            </motion.div>
+<motion.div variants={itemVariants} className="bg-transparent hover:bg-white/80 dark:hover:bg-gray-800/80 backdrop-blur-lg rounded-2xl p-6 shadow-xl border border-white/20 transition-colors duration-300">
+  <div className="flex items-center space-x-3 mb-3">
+    <div className="w-10 h-10 bg-gradient-to-r from-orange-500 to-red-600 rounded-lg flex items-center justify-center">
+      <span className="text-white font-bold">🔒</span>
+    </div>
+    <h3 className="text-lg font-semibold text-gray-800 dark:text-white">Secure & Reliable</h3>
+  </div>
+  <p className="text-gray-600 dark:text-gray-300 text-sm">Bank-grade security with 99.9% uptime guarantee for peace of mind.</p>
+</motion.div>
           </motion.div>
 
           {/* Stats */}

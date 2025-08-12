@@ -1,64 +1,64 @@
 import { cn } from "@/lib/utils";
 import SectionTitle from "@/components/Common/SectionTitle";
 import {
-  IconAdjustmentsBolt,
-  IconCloud,
-  IconCurrencyDollar,
-  IconEaseInOut,
-  IconHeart,
-  IconHelp,
-  IconRouteAltLeft,
-  IconTerminal2,
-  IconSparkles,
+  IconCode,
+  IconShield,
   IconRocket,
+  IconDeviceMobile,
+  IconCloudComputing,
+  IconLock,
+  IconUsers,
+  IconChartLine,
+  IconSparkles,
+  IconDeviceDesktop,
 } from "@tabler/icons-react";
 
 export function FeaturesSectionDemo() {
   const features = [
     {
-      title: "Built for developers",
+      title: "Custom Web Development",
       description:
-        "Built for engineers, developers, dreamers, thinkers and doers.",
-      icon: <IconTerminal2 />,
+        "Fully responsive, modern websites built with cutting-edge technologies and frameworks.",
+      icon: <IconCode />,
     },
     {
-      title: "Ease of use",
+      title: "Identity Verification",
       description:
-        "It's as easy as using an Apple, and as expensive as buying one.",
-      icon: <IconEaseInOut />,
+        "Secure and reliable ID verification services with advanced authentication protocols.",
+      icon: <IconShield />,
     },
     {
-      title: "Pricing like no other",
+      title: "Performance Optimization",
       description:
-        "Our prices are best in the market. No cap, no lock, no credit card required.",
-      icon: <IconCurrencyDollar />,
+        "Lightning-fast loading times with optimized code, CDN integration, and modern practices.",
+      icon: <IconRocket />,
     },
     {
-      title: "100% Uptime guarantee",
-      description: "We just cannot be taken down by anyone.",
-      icon: <IconCloud />,
+      title: "Mobile-First Design",
+      description: "Beautiful, responsive designs that work perfectly on all devices and screen sizes.",
+      icon: <IconDeviceMobile />,
     },
     {
-      title: "Multi-tenant Architecture",
-      description: "You can simply share passwords instead of buying new seats",
-      icon: <IconRouteAltLeft />,
+      title: "Cloud Infrastructure",
+      description: "Scalable cloud hosting solutions with automatic backups and 99.9% uptime guarantee.",
+      icon: <IconCloudComputing />,
     },
     {
-      title: "24/7 Customer Support",
+      title: "Secure Authentication",
       description:
-        "We are available a 100% of the time. Atleast our AI Agents are.",
-      icon: <IconHelp />,
+        "Multi-factor authentication and biometric verification for maximum security.",
+      icon: <IconLock />,
     },
     {
-      title: "Money back guarantee",
+      title: "User Management",
       description:
-        "If you donot like EveryAI, we will convince you to like us.",
-      icon: <IconAdjustmentsBolt />,
+        "Comprehensive user management systems with role-based access control and permissions.",
+      icon: <IconUsers />,
     },
     {
-      title: "And everything else",
-      description: "I just ran out of copy ideas. Accept my sincere apologies",
-      icon: <IconHeart />,
+      title: "Analytics & Insights",
+      description: "Detailed analytics dashboards to track performance, user behavior, and growth metrics.",
+      icon: <IconChartLine />,
     },
   ];
 
@@ -79,34 +79,34 @@ export function FeaturesSectionDemo() {
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-950/50 dark:to-purple-950/50 border border-blue-200/50 dark:border-blue-800/50 mb-6">
               <IconSparkles className="w-4 h-4 text-blue-600 dark:text-blue-400" />
               <span className="text-sm font-medium text-blue-700 dark:text-blue-300">
-                Why Choose EveryAI
+                Web Development & ID Services
               </span>
             </div>
 
             {/* Main Title */}
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
               <span className="bg-gradient-to-r from-neutral-900 via-neutral-800 to-neutral-900 dark:from-white dark:via-neutral-200 dark:to-white bg-clip-text text-transparent">
-                Powerful Features
+                Comprehensive Solutions
               </span>
               <br />
               <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 dark:from-blue-400 dark:via-purple-400 dark:to-blue-300 bg-clip-text text-transparent">
-                Built for Success
+                For Modern Businesses
               </span>
             </h2>
 
             {/* Subtitle */}
             <p className="text-xl md:text-2xl text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto mb-8 leading-relaxed">
-              Discover the comprehensive suite of features that make EveryAI the perfect choice for developers, businesses, and innovators worldwide.
+              From custom web development to secure identity verification, we provide end-to-end solutions that scale with your business needs.
             </p>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <button className="group inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
-                <IconRocket className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
-                Get Started Free
+                <IconDeviceDesktop className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
+                Start Your Project
               </button>
               <button className="inline-flex items-center gap-2 px-8 py-4 border-2 border-neutral-300 dark:border-neutral-700 hover:border-blue-500 dark:hover:border-blue-400 text-neutral-700 dark:text-neutral-300 hover:text-blue-600 dark:hover:text-blue-400 font-semibold rounded-xl transition-all duration-300 hover:bg-blue-50 dark:hover:bg-blue-950/20">
-                View Demo
+                View Portfolio
               </button>
             </div>
           </div>
@@ -143,12 +143,12 @@ const Feature = ({
       )}
     >
       {index < 4 && (
-        <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-t from-neutral-100 dark:from-neutral-800 to-transparent pointer-events-none" />
+        <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-t from-blue-100 dark:from-blue-900/20 to-transparent pointer-events-none" />
       )}
       {index >= 4 && (
-        <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-b from-neutral-100 dark:from-neutral-800 to-transparent pointer-events-none" />
+        <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-b from-blue-100 dark:from-blue-900/20 to-transparent pointer-events-none" />
       )}
-      <div className="mb-4 relative z-10 px-10 text-neutral-600 dark:text-neutral-400">
+      <div className="mb-4 relative z-10 px-10 text-neutral-600 dark:text-neutral-400 group-hover/feature:text-blue-600 dark:group-hover/feature:text-blue-400 transition-colors duration-200">
         {icon}
       </div>
       <div className="text-lg font-bold mb-2 relative z-10 px-10">
