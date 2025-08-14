@@ -23,6 +23,7 @@ import { GoogleGeminiEffectDemo } from "@/components/gemini-connection";
 import { FeaturesSectionDemo } from "@/components/feature2";
 import { TimelineDemo } from "@/components/timeline-demo";
 
+
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -34,7 +35,8 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <ScrollUp />
+      {/* <ScrollUp /> */}
+      
       <BackgroundBeamsWithCollisionDemo />
       <FeaturesSectionDemo />
       <TimelineDemo />
