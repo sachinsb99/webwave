@@ -1,18 +1,22 @@
 "use client";
 import React, { useState } from "react";
-import { HoveredLink, Menu, MenuItem, ProductItem } from "@/components/ui/navbar-menu";
-import Link from "next/link";
+import { motion } from "motion/react";
 import ThemeToggler from "@/components/Header/ThemeToggler";
-import Button from "@/components/ui/signup-button";
-import { cn } from "@/lib/utils";
 
+const transition = {
+  type: "spring" as const,
+  mass: 0.5,
+  damping: 11.5,
+  stiffness: 100,
+  restDelta: 0.001,
+  restSpeed: 0.001,
+};
+
+// Enhanced NavbarDemo component
 export function NavbarDemo() {
     return (
         <div className="relative w-full flex items-center justify-center">
             <Navbar className="top-2" />
-            {/* <p className="text-black dark:text-white">
-        The Navbar will show on top of the page
-      </p> */}
         </div>
     );
 }
@@ -20,11 +24,9 @@ export function NavbarDemo() {
 function Navbar({ className }: { className?: string }) {
     const [active, setActive] = useState<string | null>(null);
     return (
-        <div
-            className={cn("fixed top-10 inset-x-0 max-w-2xl mx-auto z-50", className)}
-        >
+        <div className={`fixed top-6 inset-x-0 max-w-2xl mx-auto z-50 ${className}`}>
             <Menu setActive={setActive}>
-                <MenuItem setActive={setActive} active={active} item="Services">
+                <MenuItem setActive={setActive} active={active} item="Services" className="pt-6.9px">
                     <div className="flex flex-col space-y-4 text-sm">
                         <HoveredLink href="/web-dev">Web Development</HoveredLink>
                         <HoveredLink href="/interface-design">Interface Design</HoveredLink>
@@ -33,7 +35,7 @@ function Navbar({ className }: { className?: string }) {
                     </div>
                 </MenuItem>
                 <MenuItem setActive={setActive} active={active} item="Products">
-                    <div className="  text-sm grid grid-cols-2 gap-10 p-4">
+                    <div className="text-sm grid grid-cols-2 gap-10 p-4">
                         <ProductItem
                             title="Algochurn"
                             href="https://algochurn.com"
@@ -68,25 +70,135 @@ function Navbar({ className }: { className?: string }) {
                         <HoveredLink href="/enterprise">Enterprise</HoveredLink>
                     </div>
                 </MenuItem>
-                <Button />
-                {/* <div className="flex items-center justify-end pr-16 lg:pr-0"> */}
-                    {/* <Link
-                        href="/signin"
-                        className="text-dark hidden px-7 py-3 text-base font-medium hover:opacity-70 md:block dark:text-white"
-                    >
-                        Sign In
-                    </Link>
-                    <Link
-                        href="/signup"
-                        className="ease-in-up shadow-btn hover:shadow-btn-hover bg-primary hover:bg-primary/90 hidden rounded-xs px-8 py-3 text-base font-medium text-white transition duration-300 md:block md:px-9 lg:px-6 xl:px-9"
-                    >
-                        Sign Up
-                    </Link> */}
-                    <div>
-                        <ThemeToggler />
-                    </div>
-                {/* </div> */}
+                
+                {/* ThemeToggler positioned to the right */}
+                <div className="absolute right-4 top-1/2 transform -translate-y-1/2">
+                    <ThemeToggler />
+                </div>
             </Menu>
         </div>
     );
 }
+
+export const MenuItem = ({
+  setActive,
+  active,
+  item,
+  children,
+  className,
+}: {
+  setActive: (item: string) => void;
+  active: string | null;
+  item: string;
+  children?: React.ReactNode;
+  className?: string;
+}) => {
+  return (
+    <div onMouseEnter={() => setActive(item)} className={`relative ${className || ''}`}>
+      <motion.p
+        transition={{ duration: 0.3 }}
+        className="cursor-pointer text-black hover:opacity-[0.9] dark:text-white"
+      >
+        {item}
+      </motion.p>
+      {active !== null && (
+        <motion.div
+          initial={{ opacity: 0, scale: 0.85, y: 10 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={transition}
+        >
+          {active === item && (
+            <div className="absolute top-[calc(100%_+_1.2rem)] left-1/2 transform -translate-x-1/2 pt-4">
+              <motion.div
+                transition={transition}
+                layoutId="active"
+                className="bg-white/95 dark:bg-black/95 backdrop-blur-md rounded-2xl overflow-hidden 
+                         border border-gray-200/60 dark:border-gray-700/60 
+                         shadow-2xl shadow-black/5 dark:shadow-white/5
+                         ring-1 ring-black/5 dark:ring-white/10"
+              >
+                <motion.div
+                  layout
+                  className="w-max h-full p-4"
+                >
+                  {children}
+                </motion.div>
+              </motion.div>
+            </div>
+          )}
+        </motion.div>
+      )}
+    </div>
+  );
+};
+
+export const Menu = ({
+  setActive,
+  children,
+}: {
+  setActive: (item: string | null) => void;
+  children: React.ReactNode;
+}) => {
+  return (
+    <nav
+      onMouseLeave={() => setActive(null)}
+      className="relative rounded-full 
+                 bg-white/80 dark:bg-black/80 backdrop-blur-md
+                 border border-gray-200/50 dark:border-gray-700/50 
+                 shadow-lg shadow-black/5 dark:shadow-white/5
+                 ring-1 ring-black/5 dark:ring-white/10
+                 flex justify-center space-x-4 px-8 py-3
+                 before:absolute before:inset-0 before:rounded-full 
+                 before:bg-gradient-to-r before:from-transparent before:via-white/10 before:to-transparent 
+                 dark:before:from-transparent dark:before:via-white/5 dark:before:to-transparent
+                 before:opacity-50 before:pointer-events-none"
+    >
+      {children}
+    </nav>
+  );
+};
+
+export const ProductItem = ({
+  title,
+  description,
+  href,
+  src,
+}: {
+  title: string;
+  description: string;
+  href: string;
+  src: string;
+}) => {
+  return (
+    <a href={href} className="flex space-x-2 group">
+      <img
+        src={src}
+        width={140}
+        height={70}
+        alt={title}
+        className="shrink-0 rounded-md shadow-lg group-hover:shadow-xl transition-shadow duration-300"
+      />
+      <div>
+        <h4 className="text-xl font-bold mb-1 text-black dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-200">
+          {title}
+        </h4>
+        <p className="text-neutral-700 text-sm max-w-[10rem] dark:text-neutral-300">
+          {description}
+        </p>
+      </div>
+    </a>
+  );
+};
+
+export const HoveredLink = ({ children, ...rest }: any) => {
+  return (
+    <a
+      {...rest}
+      className="text-neutral-700 dark:text-neutral-200 hover:text-black dark:hover:text-white 
+                 transition-colors duration-200 hover:bg-gray-50 dark:hover:bg-gray-800/50 
+                 px-2 py-1 rounded-md"
+    >
+      {children}
+    </a>
+  );
+};

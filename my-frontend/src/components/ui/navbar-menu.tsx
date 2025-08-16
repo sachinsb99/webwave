@@ -1,10 +1,12 @@
 "use client";
 import React from "react";
 import { motion } from "motion/react";
+import { Transition } from "motion/react";
 
 
 const transition = {
-  type: "spring",
+  type: "spring" as const, // Add 'as const' to fix the type issue
+  // type: "spring",
   mass: 0.5,
   damping: 11.5,
   stiffness: 100,
@@ -17,14 +19,16 @@ export const MenuItem = ({
   active,
   item,
   children,
+  className,
 }: {
   setActive: (item: string) => void;
   active: string | null;
   item: string;
   children?: React.ReactNode;
+  className?: string;
 }) => {
   return (
-    <div onMouseEnter={() => setActive(item)} className="relative ">
+    <div onMouseEnter={() => setActive(item)} className={`relative ${className || ''}`}>
       <motion.p
         transition={{ duration: 0.3 }}
         className="cursor-pointer text-black hover:opacity-[0.9] dark:text-white"
@@ -69,7 +73,7 @@ export const Menu = ({
   return (
     <nav
       onMouseLeave={() => setActive(null)} // resets the state
-      className="relative rounded-full border border-transparent dark:bg-black dark:border-white/[0.2] bg-white shadow-input flex justify-center space-x-4 px-8 py-6 "
+      className="relative rounded-full border border-transparent dark:bg-black dark:border-white/[0.2] bg-white shadow-input flex justify-center space-x-4 px-8 py-3 "
     >
       {children}
     </nav>

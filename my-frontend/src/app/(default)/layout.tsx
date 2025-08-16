@@ -32,6 +32,7 @@ import Header from "@/components/Header";
 import ScrollToTop from "@/components/ScrollToTop";
 import { Inter } from "next/font/google";
 import { NavbarDemo } from "@/components/NavbarDemo";
+// import { NavbarDemo } from "@/components/navbar";
 import "../../styles/index.css";
 
 const inter = Inter({ subsets: ["latin"] });
