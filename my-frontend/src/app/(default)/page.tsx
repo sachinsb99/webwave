@@ -22,7 +22,7 @@ import { GlobeDemo } from "@/components/globe-demo";
 import { GoogleGeminiEffectDemo } from "@/components/gemini-connection";
 import { FeaturesSectionDemo } from "@/components/feature2";
 import { TimelineDemo } from "@/components/timeline-demo";
-
+// import GlassBanner from "@/components/glass-banner";
 
 import { Metadata } from "next";
 
@@ -36,10 +36,11 @@ export default function Home() {
   return (
     <>
       {/* <ScrollUp /> */}
+      {/* <GlassBanner /> */}
       
       <BackgroundBeamsWithCollisionDemo />
       <FeaturesSectionDemo />
-      <TimelineDemo />
+      {/* <TimelineDemo /> */}
       
       {/* <ContainerTextFlipDemo /> */}
       {/* <HeroUI /> */}
