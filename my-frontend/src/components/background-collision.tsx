@@ -2,6 +2,7 @@
 import React, { useEffect } from "react";
 import { motion } from "motion/react";
 import { ContainerTextFlipDemo } from "@/components/container-text-flip";
+import GlassBanner from "@/components/glass-banner";
 
 // Declare particlesJS as a global function
 declare global {
@@ -103,7 +104,7 @@ export function BackgroundBeamsWithCollisionDemo() {
             events: {
               onhover: {
                 enable: true,
-                mode: "repulse"
+                mode: "grab"
               },
               onclick: {
                 enable: true,
@@ -113,7 +114,7 @@ export function BackgroundBeamsWithCollisionDemo() {
             },
             modes: {
               grab: {
-                distance: 140,
+                distance: 200,
                 line_linked: {
                   opacity: 1
                 }
@@ -212,25 +213,26 @@ export function BackgroundBeamsWithCollisionDemo() {
           </motion.div>
 
           {/* Right Side - UI Demo */}
-          <motion.div
+          <GlassBanner />
+          {/* <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
             className="relative flex justify-center items-center"
           >
-            {/* Main floating card with blue theme */}
+            
             <motion.div
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               className="bg-gradient-to-br from-blue-600/90 via-blue-500/90 to-cyan-500/90 backdrop-blur-sm rounded-3xl p-8 shadow-2xl shadow-blue-500/25 max-w-md w-full relative overflow-hidden border border-white/10"
             >
-              {/* Background pattern */}
+              
               <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent" />
               <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-16 translate-x-16" />
               <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/5 rounded-full translate-y-12 -translate-x-12" />
 
               <div className="relative z-10 space-y-6">
-                {/* Header */}
+                
                 <div className="text-center">
                   <h3 className="text-2xl font-bold text-white mb-2">
                     Beautiful Components
@@ -240,7 +242,7 @@ export function BackgroundBeamsWithCollisionDemo() {
                   </p>
                 </div>
 
-                {/* Feature items */}
+                
                 <div className="space-y-4">
                   <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
                     <div className="flex items-center gap-3">
@@ -279,7 +281,7 @@ export function BackgroundBeamsWithCollisionDemo() {
                   </div>
                 </div>
 
-                {/* CTA Button */}
+                
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -290,7 +292,7 @@ export function BackgroundBeamsWithCollisionDemo() {
               </div>
             </motion.div>
 
-            {/* Smaller floating elements */}
+            
             <motion.div
               animate={{ y: [0, 15, 0] }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
@@ -306,7 +308,7 @@ export function BackgroundBeamsWithCollisionDemo() {
             >
               <div className="text-white text-xl">✨</div>
             </motion.div>
-          </motion.div>
+          </motion.div> */}
         </div>
       </div>
     </div>

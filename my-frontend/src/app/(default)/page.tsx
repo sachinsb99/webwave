@@ -22,7 +22,10 @@ import { GlobeDemo } from "@/components/globe-demo";
 import { GoogleGeminiEffectDemo } from "@/components/gemini-connection";
 import { FeaturesSectionDemo } from "@/components/feature2";
 import { TimelineDemo } from "@/components/timeline-demo";
-// import GlassBanner from "@/components/glass-banner";
+import GlassBanner from "@/components/glass-banner";
+import styles from './page.module.css'
+import dynamic from 'next/dynamic'
+import ClientScene from '@/components/ClientScene';
 
 import { Metadata } from "next";
 
@@ -32,10 +35,15 @@ export const metadata: Metadata = {
   // other metadata
 };
 
+
 export default function Home() {
   return (
     <>
       {/* <ScrollUp /> */}
+       {/* <main className={styles.main}>
+        <ClientScene />
+      </main> */}
+
       {/* <GlassBanner /> */}
       
       <BackgroundBeamsWithCollisionDemo />
