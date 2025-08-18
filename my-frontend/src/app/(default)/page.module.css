@@ -3,3 +3,7 @@
     height: 100vh;
     background-color: black;
 }
+/* In your global CSS or component CSS */
+.leva-c_xrEjK {
+  display: none !important;
+}

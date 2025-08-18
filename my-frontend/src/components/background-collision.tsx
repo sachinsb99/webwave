@@ -163,7 +163,7 @@ export function BackgroundBeamsWithCollisionDemo() {
         id="particles-js" 
         className="absolute inset-0 z-0"
         style={{
-          background: 'linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #3b82f6 100%)'
+          background: 'black'
         }}
       />
       
@@ -201,14 +201,14 @@ export function BackgroundBeamsWithCollisionDemo() {
                 <span className="text-lg">→</span>
               </motion.button>
 
-              <motion.div
+              {/* <motion.div
                 whileHover={{ scale: 1.02 }}
                 className="bg-gray-900/80 hover:bg-gray-800/80 border border-gray-700 px-6 py-4 rounded-lg font-mono text-sm flex items-center gap-3 transition-colors cursor-pointer backdrop-blur-sm"
               >
                 <span className="text-gray-400">$</span>
                 <span className="text-white">npx heroui-cli@latest init</span>
                 <span className="text-gray-400 hover:text-white transition-colors cursor-pointer">📋</span>
-              </motion.div>
+              </motion.div> */}
             </div>
           </motion.div>
 
