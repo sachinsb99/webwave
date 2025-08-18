@@ -44,7 +44,7 @@ export function TimelineDemo() {
       ),
     },
     {
-      title: "E-commerce Solutions",
+      title: "Digital Marketing",
       content: (
         <div>
           <p className="mb-8 text-sm font-medium text-neutral-800 md:text-lg lg:text-xl dark:text-neutral-200 leading-relaxed font-inter">
@@ -87,7 +87,7 @@ export function TimelineDemo() {
       ),
     },
     {
-      title: "IT Services",
+      title: "IT Services & Automation",
       content: (
         <div>
           <p className="mb-6 text-sm font-medium text-neutral-800 md:text-lg lg:text-xl dark:text-neutral-200 leading-relaxed font-inter">

@@ -39,16 +39,11 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      {/* <ScrollUp /> */}
-       {/* <main className={styles.main}>
-        <ClientScene />
-      </main> */}
-
       {/* <GlassBanner /> */}
       
       <BackgroundBeamsWithCollisionDemo />
       <FeaturesSectionDemo />
-      {/* <TimelineDemo /> */}
+      <TimelineDemo />
       
       {/* <ContainerTextFlipDemo /> */}
       {/* <HeroUI /> */}
