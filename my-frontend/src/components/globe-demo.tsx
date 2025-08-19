@@ -30,9 +30,9 @@ export function GlobeDemo() {
     autoRotate: true,
     autoRotateSpeed: 0.5,
   };
-  
+
   const colors = ["#06b6d4", "#3b82f6", "#6366f1"];
-  
+
   const sampleArcs = [
     {
       order: 1,
@@ -230,8 +230,8 @@ export function GlobeDemo() {
   };
 
   const itemVariants = {
-    hidden: { 
-      opacity: 0, 
+    hidden: {
+      opacity: 0,
       y: 50,
       scale: 0.8
     },
@@ -247,7 +247,7 @@ export function GlobeDemo() {
   };
 
   const fadeInVariants = {
-    hidden: { 
+    hidden: {
       opacity: 0,
       x: -30
     },
@@ -262,8 +262,8 @@ export function GlobeDemo() {
   };
 
   const statsVariants = {
-    hidden: { 
-      opacity: 0, 
+    hidden: {
+      opacity: 0,
       scale: 0.5,
       rotate: -5
     },
@@ -280,7 +280,7 @@ export function GlobeDemo() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-gray-900 dark:via-blue-900 dark:to-indigo-900 relative overflow-hidden">
-      
+
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
@@ -298,7 +298,7 @@ export function GlobeDemo() {
       </div>
 
       <div className="flex flex-col lg:flex-row items-center justify-between min-h-screen relative z-10">
-        
+
         {/* Left Content Section */}
         <motion.div
           variants={containerVariants}
@@ -306,7 +306,7 @@ export function GlobeDemo() {
           animate="visible"
           className="flex-1 px-6 lg:px-12 py-12 lg:py-20 space-y-8 max-w-2xl"
         >
-          
+
           {/* Badge */}
           <motion.div variants={fadeInVariants} className="inline-flex items-center">
             <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
@@ -324,7 +324,7 @@ export function GlobeDemo() {
           </motion.div>
 
           {/* Subtitle */}
-          <motion.p 
+          <motion.p
             variants={fadeInVariants}
             className="text-xl lg:text-2xl text-gray-600 dark:text-gray-300 leading-relaxed font-light"
           >
@@ -332,53 +332,53 @@ export function GlobeDemo() {
           </motion.p>
 
           {/* Features Grid */}
-          <motion.div 
+          <motion.div
             variants={containerVariants}
             className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6"
           >
-           <motion.div variants={itemVariants} className="bg-transparent hover:bg-white/80 dark:hover:bg-gray-800/80 backdrop-blur-lg rounded-2xl p-6 shadow-xl border border-white/20 transition-colors duration-300">
-  <div className="flex items-center space-x-3 mb-3">
-    <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-      <span className="text-white font-bold">⚡</span>
-    </div>
-    <h3 className="text-lg font-semibold text-gray-800 dark:text-white">Lightning Fast</h3>
-  </div>
-  <p className="text-gray-600 dark:text-gray-300 text-sm">Delivering excellence at the speed of light with our optimized infrastructure.</p>
-</motion.div>
+            <motion.div variants={itemVariants} className="bg-transparent hover:bg-white/80 dark:hover:bg-gray-800/80 backdrop-blur-lg rounded-2xl p-6 shadow-xl border border-white/20 transition-colors duration-300">
+              <div className="flex items-center space-x-3 mb-3">
+                <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                  <span className="text-white font-bold">⚡</span>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-800 dark:text-white">Lightning Fast</h3>
+              </div>
+              <p className="text-gray-600 dark:text-gray-300 text-sm">Delivering excellence at the speed of light with our optimized infrastructure.</p>
+            </motion.div>
 
-<motion.div variants={itemVariants} className="bg-transparent hover:bg-white/80 dark:hover:bg-gray-800/80 backdrop-blur-lg rounded-2xl p-6 shadow-xl border border-white/20 transition-colors duration-300">
-  <div className="flex items-center space-x-3 mb-3">
-    <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-blue-600 rounded-lg flex items-center justify-center">
-      <span className="text-white font-bold">🌍</span>
-    </div>
-    <h3 className="text-lg font-semibold text-gray-800 dark:text-white">Global Reach</h3>
-  </div>
-  <p className="text-gray-600 dark:text-gray-300 text-sm">Connecting continents with seamless service delivery worldwide.</p>
-</motion.div>
+            <motion.div variants={itemVariants} className="bg-transparent hover:bg-white/80 dark:hover:bg-gray-800/80 backdrop-blur-lg rounded-2xl p-6 shadow-xl border border-white/20 transition-colors duration-300">
+              <div className="flex items-center space-x-3 mb-3">
+                <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-blue-600 rounded-lg flex items-center justify-center">
+                  <span className="text-white font-bold">🌍</span>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-800 dark:text-white">Global Reach</h3>
+              </div>
+              <p className="text-gray-600 dark:text-gray-300 text-sm">Connecting continents with seamless service delivery worldwide.</p>
+            </motion.div>
 
-<motion.div variants={itemVariants} className="bg-transparent hover:bg-white/80 dark:hover:bg-gray-800/80 backdrop-blur-lg rounded-2xl p-6 shadow-xl border border-white/20 transition-colors duration-300">
-  <div className="flex items-center space-x-3 mb-3">
-    <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-600 rounded-lg flex items-center justify-center">
-      <span className="text-white font-bold">🏆</span>
-    </div>
-    <h3 className="text-lg font-semibold text-gray-800 dark:text-white">Award Winning</h3>
-  </div>
-  <p className="text-gray-600 dark:text-gray-300 text-sm">Recognized excellence in service innovation and customer satisfaction.</p>
-</motion.div>
+            <motion.div variants={itemVariants} className="bg-transparent hover:bg-white/80 dark:hover:bg-gray-800/80 backdrop-blur-lg rounded-2xl p-6 shadow-xl border border-white/20 transition-colors duration-300">
+              <div className="flex items-center space-x-3 mb-3">
+                <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-600 rounded-lg flex items-center justify-center">
+                  <span className="text-white font-bold">🏆</span>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-800 dark:text-white">Award Winning</h3>
+              </div>
+              <p className="text-gray-600 dark:text-gray-300 text-sm">Recognized excellence in service innovation and customer satisfaction.</p>
+            </motion.div>
 
-<motion.div variants={itemVariants} className="bg-transparent hover:bg-white/80 dark:hover:bg-gray-800/80 backdrop-blur-lg rounded-2xl p-6 shadow-xl border border-white/20 transition-colors duration-300">
-  <div className="flex items-center space-x-3 mb-3">
-    <div className="w-10 h-10 bg-gradient-to-r from-orange-500 to-red-600 rounded-lg flex items-center justify-center">
-      <span className="text-white font-bold">🔒</span>
-    </div>
-    <h3 className="text-lg font-semibold text-gray-800 dark:text-white">Secure & Reliable</h3>
-  </div>
-  <p className="text-gray-600 dark:text-gray-300 text-sm">Bank-grade security with 99.9% uptime guarantee for peace of mind.</p>
-</motion.div>
+            <motion.div variants={itemVariants} className="bg-transparent hover:bg-white/80 dark:hover:bg-gray-800/80 backdrop-blur-lg rounded-2xl p-6 shadow-xl border border-white/20 transition-colors duration-300">
+              <div className="flex items-center space-x-3 mb-3">
+                <div className="w-10 h-10 bg-gradient-to-r from-orange-500 to-red-600 rounded-lg flex items-center justify-center">
+                  <span className="text-white font-bold">🔒</span>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-800 dark:text-white">Secure & Reliable</h3>
+              </div>
+              <p className="text-gray-600 dark:text-gray-300 text-sm">Bank-grade security with 99.9% uptime guarantee for peace of mind.</p>
+            </motion.div>
           </motion.div>
 
           {/* Stats */}
-          <motion.div 
+          <motion.div
             variants={containerVariants}
             className="flex flex-wrap gap-8 pt-6"
           >
@@ -395,66 +395,13 @@ export function GlobeDemo() {
               <div className="text-sm text-gray-600 dark:text-gray-400 font-medium">Uptime Record</div>
             </motion.div>
           </motion.div>
-
-          {/* CTA Button */}
-          {/* <motion.div variants={itemVariants} className="pt-6">
-            <motion.button
-              whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(59, 130, 246, 0.3)" }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 text-white px-8 py-4 rounded-2xl font-semibold text-lg shadow-2xl hover:shadow-blue-500/25 transition-all duration-300"
-            >
-              Experience Our Ecosystem →
-            </motion.button>
-          </motion.div> */}
         </motion.div>
 
         {/* Right Globe Section */}
         <div className="flex-1 relative h-screen lg:h-auto lg:min-h-screen flex items-center justify-center">
-          {/* <motion.div 
-            initial={{ opacity: 0, scale: 0.8, rotateY: 45 }}
-            animate={{ opacity: 1, scale: 1, rotateY: 0 }}
-            transition={{ duration: 1.5, ease: "easeOut", delay: 0.5 }}
-            className="w-full h-full relative"
-          > */}
-            <div className="absolute w-full h-full z-10">
-              <World data={sampleArcs} globeConfig={globeConfig} />
-            </div>
-            
-            {/* Globe highlight effect */}
-            {/* <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: [0, 0.3, 0] }}
-              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full blur-3xl z-0"
-            />
-          </motion.div> */}
-          
-          {/* Floating connection indicators */}
-          {/* <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 2 }}
-            className="absolute top-20 right-10 bg-white/90 dark:bg-gray-800/90 backdrop-blur-lg rounded-2xl p-4 shadow-xl border border-white/20"
-          >
-            <div className="flex items-center space-x-2">
-              <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-              <span className="text-sm font-medium text-gray-800 dark:text-white">Live Connections</span>
-            </div>
-            <div className="text-2xl font-bold text-blue-600 mt-1">247,891</div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 2.5 }}
-            className="absolute bottom-32 left-10 bg-white/90 dark:bg-gray-800/90 backdrop-blur-lg rounded-2xl p-4 shadow-xl border border-white/20"
-          >
-            <div className="flex items-center space-x-2">
-              <div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
-              <span className="text-sm font-medium text-gray-800 dark:text-white">Data Throughput</span>
-            </div>
-            <div className="text-2xl font-bold text-purple-600 mt-1">1.2 PB/s</div>
-          </motion.div> */}
+          <div className="absolute w-full h-full z-10">
+            <World data={sampleArcs} globeConfig={globeConfig} />
+          </div>
         </div>
       </div>
     </div>

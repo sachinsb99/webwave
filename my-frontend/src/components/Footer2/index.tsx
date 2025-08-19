@@ -3,15 +3,8 @@ import React from 'react';
 const Footer = () => {
   return (
     <footer className="bg-black text-white py-16 px-8 relative overflow-hidden">
-      {/* Background Text */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <h1 className="text-[12rem] md:text-[16rem] lg:text-[20rem] font-bold text-gray-800/10 select-none whitespace-nowrap">
-          DevStudio
-        </h1>
-      </div>
-      
       {/* Main Content */}
-      <div className="relative z-10 max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         {/* Top Section with Logo and Links */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-12">
           {/* Logo */}
@@ -70,10 +63,17 @@ const Footer = () => {
         </div>
         
         {/* Bottom Copyright */}
-        <div className="border-t border-gray-800 pt-8">
+        <div className="border-t border-gray-800 pt-8 mb-8">
           <p className="text-gray-400 text-sm">
             © Copyright DevStudios 2024. All rights reserved.
           </p>
+        </div>
+        
+        {/* Brand Background Text at Bottom */}
+        <div className="flex items-center justify-center">
+          <h1 className="text-[5rem] md:text-[10rem] lg:text-[10rem] font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent select-none opacity-30">
+            The Web Wave
+          </h1>
         </div>
       </div>
     </footer>

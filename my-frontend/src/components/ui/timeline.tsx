@@ -94,7 +94,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                 </div>
               </div>
 
-              <div className="flex items-center gap-3">
+              {/* <div className="flex items-center gap-3">
                 <div className="w-12 h-12 rounded-full bg-gradient-to-r from-green-500 to-teal-500 flex items-center justify-center">
                   <span className="text-white font-bold text-lg">24/7</span>
                 </div>
@@ -102,7 +102,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                   <p className="font-semibold text-neutral-800 dark:text-neutral-200">Support</p>
                   <p className="text-sm text-neutral-600 dark:text-neutral-400">Always available</p>
                 </div>
-              </div>
+              </div> */}
 
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 rounded-full bg-gradient-to-r from-orange-500 to-red-500 flex items-center justify-center">
