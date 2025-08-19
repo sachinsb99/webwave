@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import dynamic from "next/dynamic";
 
 const World = dynamic(() => import("@/components/ui/globe").then((m) => m.World), {
@@ -217,8 +217,8 @@ export function GlobeDemo() {
     },
   ];
 
-  // Animation variants
-  const containerVariants = {
+  // Animation variants with proper TypeScript types
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -229,7 +229,7 @@ export function GlobeDemo() {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: {
       opacity: 0,
       y: 50,
@@ -241,12 +241,12 @@ export function GlobeDemo() {
       scale: 1,
       transition: {
         duration: 0.8,
-        ease: [0.6, -0.05, 0.01, 0.99],
+        ease: [0.6, -0.05, 0.01, 0.99] as const,
       },
     },
   };
 
-  const fadeInVariants = {
+  const fadeInVariants: Variants = {
     hidden: {
       opacity: 0,
       x: -30
@@ -261,7 +261,7 @@ export function GlobeDemo() {
     },
   };
 
-  const statsVariants = {
+  const statsVariants: Variants = {
     hidden: {
       opacity: 0,
       scale: 0.5,

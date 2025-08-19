@@ -31,8 +31,8 @@ import { CompareDemo } from '@/components/compare2';
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Free Next.js Template for Startup and SaaS",
-  description: "This is Home for Startup Nextjs Template",
+  title: "The Web Wave",
+  description: "Web Development Company",
   // other metadata
 };
 
