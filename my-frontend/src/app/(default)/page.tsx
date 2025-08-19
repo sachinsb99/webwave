@@ -26,6 +26,7 @@ import GlassBanner from "@/components/glass-banner";
 import styles from './page.module.css'
 import dynamic from 'next/dynamic'
 import ClientScene from '@/components/ClientScene';
+import { CompareDemo } from '@/components/compare2';
 
 import { Metadata } from "next";
 
@@ -43,6 +44,7 @@ export default function Home() {
       
       <BackgroundBeamsWithCollisionDemo />
       <FeaturesSectionDemo />
+      {/* <CompareDemo /> */}
       <TimelineDemo />
       
       {/* <ContainerTextFlipDemo /> */}

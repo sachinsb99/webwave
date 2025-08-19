@@ -186,8 +186,8 @@ export function BackgroundBeamsWithCollisionDemo() {
               </h1>
 
               <p className="text-xl text-gray-300 leading-relaxed max-w-lg">
-                Beautiful, fast and modern React UI library for building accessible
-                and customizable web applications.
+                Transform your business with custom web solutions that drive growth, 
+                enhance user engagement, and deliver measurable results.
               </p>
             </div>
 

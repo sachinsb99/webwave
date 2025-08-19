@@ -106,7 +106,7 @@ export function FeaturesSectionDemo() {
                 Start Your Project
               </button>
               <button className="inline-flex items-center gap-2 px-8 py-4 border-2 border-neutral-300 dark:border-neutral-700 hover:border-blue-500 dark:hover:border-blue-400 text-neutral-700 dark:text-neutral-300 hover:text-blue-600 dark:hover:text-blue-400 font-semibold rounded-xl transition-all duration-300 hover:bg-blue-50 dark:hover:bg-blue-950/20">
-                View Portfolio
+                Hire Us
               </button>
             </div>
           </div>
