@@ -12,7 +12,7 @@ const Footer = () => {
             <div className="w-8 h-8 bg-white rounded mr-3 flex items-center justify-center">
               <span className="text-black font-bold text-lg">A</span>
             </div>
-            <span className="text-xl font-semibold">DevStudio</span>
+            <span className="text-xl font-semibold">THE WEB WAVE</span>
           </div>
           
           {/* Navigation Links Grid */}
@@ -65,7 +65,7 @@ const Footer = () => {
         {/* Bottom Copyright */}
         <div className="border-t border-gray-800 pt-8 mb-8">
           <p className="text-gray-400 text-sm">
-            © Copyright DevStudios 2024. All rights reserved.
+            © Copyright The Web Wave 2024. All rights reserved.
           </p>
         </div>
         

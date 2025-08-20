@@ -2,6 +2,7 @@
 import axios from 'axios';
 import { useState } from "react";
 import Link from "next/link";
+// import "../../../styles/index.css";
 
 interface RegisterResponse {
   access_token: string;
