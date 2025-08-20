@@ -17,24 +17,10 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      {/* <GlassBanner /> */}
-      
       <BackgroundBeamsWithCollisionDemo />
       <FeaturesSectionDemo />
       {/* <CompareDemo /> */}
       <TimelineDemo />
-      
-      {/* <ContainerTextFlipDemo /> */}
-      {/* <HeroUI /> */}
-      {/* <BackgroundBeams /> */}
-      {/* <GlowingEffectDemo /> */}
-      {/* <CardHoverEffectDemo /> */}
-      {/* <Brands /> */}
-      {/* <FeaturesSectionDemo1 /> */}
-      {/* <AboutSectionOne /> */}
-      {/* <AboutSectionTwo /> */}
-      {/* <Testimonials /> */}
-      {/* <Pricing /> */}
       <GoogleGeminiEffectDemo />
       {/* <Blog /> */}
       <GlobeDemo />
