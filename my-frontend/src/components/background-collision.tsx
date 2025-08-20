@@ -5,9 +5,15 @@ import { ContainerTextFlipDemo } from "@/components/container-text-flip";
 import GlassBanner from "@/components/glass-banner";
 
 // Declare particlesJS as a global function
+// declare global {
+//   interface Window {
+//     particlesJS: (id: string, config: any) => void;
+//   }
+// }
+// Change your global declaration at the top
 declare global {
   interface Window {
-    particlesJS: (id: string, config: any) => void;
+    particlesJS?: (id: string, config: any) => void; // Added ? to make it optional
   }
 }
 
@@ -201,114 +207,12 @@ export function BackgroundBeamsWithCollisionDemo() {
                 <span className="text-lg">→</span>
               </motion.button>
 
-              {/* <motion.div
-                whileHover={{ scale: 1.02 }}
-                className="bg-gray-900/80 hover:bg-gray-800/80 border border-gray-700 px-6 py-4 rounded-lg font-mono text-sm flex items-center gap-3 transition-colors cursor-pointer backdrop-blur-sm"
-              >
-                <span className="text-gray-400">$</span>
-                <span className="text-white">npx heroui-cli@latest init</span>
-                <span className="text-gray-400 hover:text-white transition-colors cursor-pointer">📋</span>
-              </motion.div> */}
             </div>
           </motion.div>
 
           {/* Right Side - UI Demo */}
           <GlassBanner />
-          {/* <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            className="relative flex justify-center items-center"
-          >
-            
-            <motion.div
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="bg-gradient-to-br from-blue-600/90 via-blue-500/90 to-cyan-500/90 backdrop-blur-sm rounded-3xl p-8 shadow-2xl shadow-blue-500/25 max-w-md w-full relative overflow-hidden border border-white/10"
-            >
-              
-              <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent" />
-              <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-16 translate-x-16" />
-              <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/5 rounded-full translate-y-12 -translate-x-12" />
-
-              <div className="relative z-10 space-y-6">
-                
-                <div className="text-center">
-                  <h3 className="text-2xl font-bold text-white mb-2">
-                    Beautiful Components
-                  </h3>
-                  <p className="text-blue-100 text-sm">
-                    Pre-built with modern design
-                  </p>
-                </div>
-
-                
-                <div className="space-y-4">
-                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
-                        <span className="text-blue-600 font-bold text-lg">⚡</span>
-                      </div>
-                      <div>
-                        <div className="text-white font-semibold">Fast Performance</div>
-                        <div className="text-blue-100 text-sm">Optimized for speed</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
-                        <span className="text-blue-600 font-bold text-lg">🎨</span>
-                      </div>
-                      <div>
-                        <div className="text-white font-semibold">Customizable</div>
-                        <div className="text-blue-100 text-sm">Tailor to your needs</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
-                        <span className="text-blue-600 font-bold text-lg">♿</span>
-                      </div>
-                      <div>
-                        <div className="text-white font-semibold">Accessible</div>
-                        <div className="text-blue-100 text-sm">Built for everyone</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-full bg-white text-blue-600 font-semibold py-3 px-6 rounded-xl hover:bg-blue-50 transition-colors shadow-lg"
-                >
-                  Explore Components
-                </motion.button>
-              </div>
-            </motion.div>
-
-            
-            <motion.div
-              animate={{ y: [0, 15, 0] }}
-              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-              className="absolute -top-4 -right-4 bg-blue-500/90 backdrop-blur-sm rounded-2xl p-3 shadow-xl shadow-blue-500/25 border border-white/10"
-            >
-              <div className="text-white text-2xl">🚀</div>
-            </motion.div>
-
-            <motion.div
-              animate={{ y: [0, -8, 0] }}
-              transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              className="absolute -bottom-6 -left-6 bg-cyan-500/90 backdrop-blur-sm rounded-xl p-3 shadow-xl shadow-cyan-500/25 border border-white/10"
-            >
-              <div className="text-white text-xl">✨</div>
-            </motion.div>
-          </motion.div> */}
+          
         </div>
       </div>
     </div>

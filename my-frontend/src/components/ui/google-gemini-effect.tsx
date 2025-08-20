@@ -4,10 +4,9 @@ import { motion, MotionValue } from "motion/react";
 import React from "react";
 import { TypewriterEffectSmoothDemo } from "@/components/typewitter-effect-demo";
 
-
 const transition = {
   duration: 0,
-  ease: "linear",
+  ease: "linear" as const, // Fixed: Use 'as const' to ensure proper type
 };
 
 export const GoogleGeminiEffect = ({

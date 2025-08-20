@@ -1,10 +1,11 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { Color, Scene, Fog, PerspectiveCamera, Vector3 } from "three";
+import { Color, Scene, Fog, PerspectiveCamera, Vector3, Group } from "three";
 import ThreeGlobe from "three-globe";
 import { useThree, Canvas, extend } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import countries from "@/data/globe.json";
+
 declare module "@react-three/fiber" {
   interface ThreeElements {
     threeGlobe: ThreeElements["mesh"] & {
@@ -60,11 +61,20 @@ interface WorldProps {
   data: Position[];
 }
 
+// Define the point type
+type PointData = {
+  size: number;
+  order: number;
+  color: string;
+  lat: number;
+  lng: number;
+};
+
 let numbersOfRings = [0];
 
 export function Globe({ globeConfig, data }: WorldProps) {
   const globeRef = useRef<ThreeGlobe | null>(null);
-  const groupRef = useRef();
+  const groupRef = useRef<Group>(null); // Fixed: Added proper type and initial value
   const [isInitialized, setIsInitialized] = useState(false);
 
   const defaultProps = {
@@ -120,7 +130,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
     if (!globeRef.current || !isInitialized || !data) return;
 
     const arcs = data;
-    let points = [];
+    let points: PointData[] = []; // Fixed: Explicitly typed array
     for (let i = 0; i < arcs.length; i++) {
       const arc = arcs[i];
       const rgb = hexToRgb(arc.color) as { r: number; g: number; b: number };
@@ -223,7 +233,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
           color: d.color,
         }));
 
-      globeRef.current.ringsData(ringsData);
+      globeRef.current!.ringsData(ringsData);
     }, 2000);
 
     return () => {
@@ -241,8 +251,8 @@ export function WebGLRendererConfig() {
     gl.setPixelRatio(window.devicePixelRatio);
     gl.setSize(size.width, size.height);
     gl.setClearColor(0xffaaff, 0);
-  }, []);
-
+  }, [gl, size]); // Added dependencies
+  
   return null;
 }
 
@@ -299,7 +309,7 @@ export function hexToRgb(hex: string) {
 }
 
 export function genRandomNumbers(min: number, max: number, count: number) {
-  const arr = [];
+  const arr: number[] = []; // Fixed: Explicitly typed array
   while (arr.length < count) {
     const r = Math.floor(Math.random() * (max - min)) + min;
     if (arr.indexOf(r) === -1) arr.push(r);
