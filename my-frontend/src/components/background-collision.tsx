@@ -4,12 +4,6 @@ import { motion } from "motion/react";
 import { ContainerTextFlipDemo } from "@/components/container-text-flip";
 import GlassBanner from "@/components/glass-banner";
 
-// Declare particlesJS as a global function
-// declare global {
-//   interface Window {
-//     particlesJS: (id: string, config: any) => void;
-//   }
-// }
 // Change your global declaration at the top
 declare global {
   interface Window {
@@ -174,44 +168,146 @@ export function BackgroundBeamsWithCollisionDemo() {
       />
       
       {/* Main content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen py-20">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-screen py-12 sm:py-16 lg:py-20">
 
           {/* Left Side - Content */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="space-y-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="flex flex-col justify-center space-y-8 lg:space-y-12"
           >
-            <div className="space-y-8">
-              <h1 className="text-5xl lg:text-5xl font-bold leading-tight text-white">
-                Make{" "}
-                <ContainerTextFlipDemo />
-                websites regardless of your design experience.
-              </h1>
+            {/* Professional Badge */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-full px-4 py-2 text-sm text-white/80 w-fit"
+            >
+              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+              Professional Web Development
+            </motion.div>
 
-              <p className="text-xl text-gray-300 leading-relaxed max-w-lg">
-                Transform your business with custom web solutions that drive growth, 
-                enhance user engagement, and deliver measurable results.
-              </p>
+            {/* Main Heading */}
+            <div className="space-y-6">
+              <motion.h1 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3, duration: 0.6 }}
+                className="text-2xl sm:text-3xl lg:text-4xl xl:text-6xl font-bold text-white leading-[1.1] tracking-tight"
+              >
+                Get {" "}
+                <span className="inline-block">
+                  <ContainerTextFlipDemo />
+                </span>
+                <br />
+                <span className="text-gray-300">websites regardless</span>
+                <br />
+                <span className="text-gray-300">of your design experience.</span>
+              </motion.h1>
+
+              <motion.p 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4, duration: 0.6 }}
+                className="text-lg lg:text-xl text-gray-400 leading-relaxed max-w-2xl font-light"
+              >
+                We create stunning, high-performance websites that convert visitors into customers. 
+                From concept to launch, we handle everything so you can focus on growing your business.
+              </motion.p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            {/* CTA Buttons */}
+            {/* <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.6 }}
+              className="flex flex-col sm:flex-row gap-4 items-start"
+            >
               <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold flex items-center gap-2 transition-colors shadow-lg"
+                whileHover={{ scale: 1.02, boxShadow: "0 10px 40px rgba(59, 130, 246, 0.3)" }}
+                whileTap={{ scale: 0.98 }}
+                className="group bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-4 rounded-xl font-medium flex items-center gap-3 transition-all duration-300 shadow-lg shadow-blue-600/25"
               >
-                Get Started
-                <span className="text-lg">→</span>
+                Start Your Project
+                <motion.span 
+                  initial={{ x: 0 }}
+                  whileHover={{ x: 4 }}
+                  className="transition-transform duration-200"
+                >
+                  →
+                </motion.span>
               </motion.button>
 
-            </div>
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="group text-white px-8 py-4 rounded-xl font-medium flex items-center gap-3 transition-all duration-300 border border-white/20 hover:border-white/40 hover:bg-white/5 backdrop-blur-sm"
+              >
+                View Our Work
+                <motion.span 
+                  initial={{ x: 0 }}
+                  whileHover={{ x: 4 }}
+                  className="transition-transform duration-200"
+                >
+                  ↗
+                </motion.span>
+              </motion.button>
+            </motion.div> */}
+
+            {/* Professional Stats */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6, duration: 0.6 }}
+              className="grid grid-cols-3 gap-8 pt-8 border-t border-white/10"
+            >
+              <div className="text-center lg:text-left">
+                <div className="text-3xl font-bold text-white mb-1">150+</div>
+                <div className="text-sm text-gray-400 font-medium">Projects Delivered</div>
+              </div>
+              <div className="text-center lg:text-left">
+                <div className="text-3xl font-bold text-white mb-1">99%</div>
+                <div className="text-sm text-gray-400 font-medium">Client Retention</div>
+              </div>
+              <div className="text-center lg:text-left">
+                <div className="text-3xl font-bold text-white mb-1">5★</div>
+                <div className="text-sm text-gray-400 font-medium">Average Rating</div>
+              </div>
+            </motion.div>
+
+            {/* Trust Indicators */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.7, duration: 0.6 }}
+              className="flex flex-wrap items-center gap-6 text-sm text-gray-400"
+            >
+              <div className="flex items-center gap-2">
+                <div className="w-1 h-1 bg-green-400 rounded-full"></div>
+                <span>Fast 48h Delivery</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-1 h-1 bg-blue-400 rounded-full"></div>
+                <span>Mobile-First Design</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-1 h-1 bg-purple-400 rounded-full"></div>
+                <span>SEO Optimized</span>
+              </div>
+            </motion.div>
           </motion.div>
 
           {/* Right Side - UI Demo */}
-          <GlassBanner />
+          <motion.div 
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="order-first lg:order-last"
+          >
+            <GlassBanner />
+          </motion.div>
           
         </div>
       </div>

@@ -21,7 +21,7 @@ export default function Model() {
     }
     
     return (
-        <group scale={viewport.width / 3.75} >
+        <group scale={viewport.width / 2.75} >
             <Text font={'/fonts/PPNeueMontreal-Bold.otf'} position={[0, 0, -1]} fontSize={0.5} color="white" anchorX="center" anchorY="middle">
                 THE WEB WAVE!
             </Text>
