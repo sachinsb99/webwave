@@ -168,7 +168,7 @@ export function BackgroundBeamsWithCollisionDemo() {
       />
       
       {/* Main content */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 md:pt-14">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-screen py-12 sm:py-16 lg:py-20">
 
           {/* Left Side - Content */}
