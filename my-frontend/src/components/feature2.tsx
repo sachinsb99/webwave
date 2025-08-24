@@ -1,8 +1,8 @@
 import { cn } from "@/lib/utils";
-// import SectionTitle from "@/components/Common/SectionTitle";
+
 import {
   IconCode,
-  IconShield,
+  IconRefresh,
   IconRocket,
   IconDeviceMobile,
   IconCloudComputing,
@@ -22,10 +22,10 @@ export function FeaturesSectionDemo() {
       icon: <IconCode />,
     },
     {
-      title: "Identity Verification",
+      title: "Website Revamping",
       description:
-        "Secure and reliable ID verification services with advanced authentication protocols.",
-      icon: <IconShield />,
+        "Transform your outdated website with modern design, improved UX, and enhanced performance.",
+      icon: <IconRefresh />,
     },
     {
       title: "Performance Optimization",

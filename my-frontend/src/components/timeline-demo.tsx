@@ -12,28 +12,28 @@ export function TimelineDemo() {
           </p>
           <div className="grid grid-cols-2 gap-4">
             <img
-              src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=500&fit=crop&crop=entropy&auto=format&fm=jpg&q=60"
+              src="/images/services/1687.jpg?w=500&h=500&fit=crop&crop=entropy&auto=format&fm=jpg&q=60"
               alt="web development"
               width={500}
               height={500}
               className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
             />
             <img
-              src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=500&h=500&fit=crop&crop=entropy&auto=format&fm=jpg&q=60"
+              src="/images/services/html-css.jpg?w=500&h=500&fit=crop&crop=entropy&auto=format&fm=jpg&q=60"
               alt="mobile responsive"
               width={500}
               height={500}
               className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
             />
             <img
-              src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=500&h=500&fit=crop&crop=entropy&auto=format&fm=jpg&q=60"
+              src="/images/services/5757453.jpg?w=500&h=500&fit=crop&crop=entropy&auto=format&fm=jpg&q=60"
               alt="react development"
               width={500}
               height={500}
               className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
             />
             <img
-              src="https://images.unsplash.com/photo-1581276879432-15e50529f34b?w=500&h=500&fit=crop&crop=entropy&auto=format&fm=jpg&q=60"
+              src="/images/services/3196758.jpg?w=500&h=500&fit=crop&crop=entropy&auto=format&fm=jpg&q=60"
               alt="ui ux design"
               width={500}
               height={500}
@@ -55,21 +55,21 @@ export function TimelineDemo() {
           </p>
           <div className="grid grid-cols-2 gap-4">
             <img
-              src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&h=500&fit=crop&crop=entropy&auto=format&fm=jpg&q=60"
+              src="/images/services/digital-marketing.jpg?w=500&h=500&fit=crop&crop=entropy&auto=format&fm=jpg&q=60"
               alt="ecommerce store"
               width={500}
               height={500}
               className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
             />
             <img
-              src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=500&h=500&fit=crop&crop=entropy&auto=format&fm=jpg&q=60"
+              src="/images/services/1690.jpg?w=500&h=500&fit=crop&crop=entropy&auto=format&fm=jpg&q=60"
               alt="online shopping"
               width={500}
               height={500}
               className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
             />
             <img
-              src="https://images.unsplash.com/photo-1556740758-90de374c12ad?w=500&h=500&fit=crop&crop=entropy&auto=format&fm=jpg&q=60"
+              src="/images/services/2063928d.jpg?w=500&h=500&fit=crop&crop=entropy&auto=format&fm=jpg&q=60"
               alt="payment processing"
               width={500}
               height={500}

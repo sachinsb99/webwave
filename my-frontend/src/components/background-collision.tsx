@@ -372,7 +372,7 @@ export function BackgroundBeamsWithCollisionDemo() {
                     boxShadow: "0 10px 30px rgba(251, 191, 36, 0.1)"
                   }}
                 >
-                  <AnimatedCounter end={5} suffix="★" duration={2200} />
+                  <AnimatedCounter end={4} suffix="★" duration={2200} />
                   <motion.div 
                     className="text-sm text-gray-400 font-medium mt-2"
                     initial={{ opacity: 0 }}
@@ -394,7 +394,7 @@ export function BackgroundBeamsWithCollisionDemo() {
             >
               <div className="flex items-center gap-2">
                 <div className="w-1 h-1 bg-green-400 rounded-full"></div>
-                <span>Fast 48h Delivery</span>
+                <span>Fast 48h Delivery For Landing Page</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-1 h-1 bg-blue-400 rounded-full"></div>
