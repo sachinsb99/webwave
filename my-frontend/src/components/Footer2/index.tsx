@@ -14,7 +14,7 @@ const Footer = () => {
             <div className="flex items-center group cursor-pointer">
               {/* <div className="w-20 h-20 rounded-lg overflow-hidden shadow-lg group-hover:shadow-xl transition-shadow duration-300 mr-3 bg-white/10 backdrop-blur-sm flex items-center justify-center"> */}
                 <img 
-                  src="/images/logo/TW2.png" 
+                  src="/images/logo/HeaderTW2.png" 
                   alt="The Web Wave Logo" 
                   className="w-50 h-30 object-contain group-hover:scale-110 transition-transform duration-300"
                 />

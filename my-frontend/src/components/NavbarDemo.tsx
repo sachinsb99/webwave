@@ -127,12 +127,11 @@ function Navbar({ className }: { className?: string }) {
               whileTap={{ scale: 0.95 }}
             >
               <a href="/" className="flex items-center space-x-2 group">
-                <div className="w-7 h-7 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center shadow-md">
-                  <span className="text-white font-bold text-xs">L</span>
-                </div>
-                <span className="text-lg font-bold text-black dark:text-white">
-                  Logo
-                </span>
+                <img
+                  src="/images/logo/HeaderTW2.png"
+                  alt="The Web Wave Logo"
+                  className="w-20 h-10 object-contain group-hover:scale-110 transition-transform duration-300"
+                />
               </a>
             </motion.div>
 
