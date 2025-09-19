@@ -382,7 +382,7 @@ export function GlobeDemo() {
             variants={containerVariants}
             className="flex flex-wrap gap-8 pt-6"
           >
-            <motion.div variants={statsVariants} className="text-center">
+            {/* <motion.div variants={statsVariants} className="text-center">
               <div className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">500M+</div>
               <div className="text-sm text-gray-600 dark:text-gray-400 font-medium">Happy Customers</div>
             </motion.div>
@@ -393,7 +393,7 @@ export function GlobeDemo() {
             <motion.div variants={statsVariants} className="text-center">
               <div className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">99.9%</div>
               <div className="text-sm text-gray-600 dark:text-gray-400 font-medium">Uptime Record</div>
-            </motion.div>
+            </motion.div> */}
           </motion.div>
         </motion.div>
 

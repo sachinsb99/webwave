@@ -20,7 +20,7 @@ export function GoogleGeminiEffectDemo() {
   return (
     
     <div
-      className="h-[600vh] bg-white dark:bg-neutral-950 w-full rounded-md relative pt-40 overflow-clip"
+      className="h-[400vh] bg-white dark:bg-neutral-950 w-full rounded-md relative pt-40 overflow-clip"
       ref={ref}
     >
       {/* <TypewriterEffectSmoothDemo /> */}

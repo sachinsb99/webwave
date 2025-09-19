@@ -5,6 +5,7 @@ import { GoogleGeminiEffectDemo } from "@/components/gemini-connection";
 import { FeaturesSectionDemo } from "@/components/feature2";
 import { TimelineDemo } from "@/components/timeline-demo";
 import { CompareDemo } from '@/components/compare2';
+import WebDevServicePopup from '@/components/EnquiryContact';
 
 import { Metadata } from "next";
 
@@ -25,6 +26,7 @@ export default function Home() {
       {/* <Blog /> */}
       <GlobeDemo />
       <Contact />
+      <WebDevServicePopup />
     </>
   );
 }

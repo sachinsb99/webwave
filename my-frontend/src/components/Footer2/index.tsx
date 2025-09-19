@@ -108,7 +108,7 @@ const Footer = () => {
         </div>
         
         {/* Bottom Copyright */}
-        <div className="border-t border-gray-800 pt-8 mb-8">
+        {/* <div className="border-t border-gray-800 pt-8 mb-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-gray-400 text-sm text-center md:text-left">
               © 2024 The Web Wave. All rights reserved.
@@ -119,7 +119,7 @@ const Footer = () => {
               <span>Proudly serving globally</span>
             </div>
           </div>
-        </div>
+        </div> */}
         
         {/* Brand Background Text at Bottom */}
         <div className="flex items-center justify-center">
