@@ -1,7 +1,13 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WebDevController;
 use App\Http\Controllers\AnalyticsController;
+
+
+Route::get('/test', function () {
+    return response()->json(['message' => 'API working from Laravel!']);
+});
 
 Route::prefix('web-dev')->group(function () {
     // Lead Management
