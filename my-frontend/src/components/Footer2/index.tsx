@@ -89,7 +89,7 @@ const Footer = () => {
         
         {/* Newsletter Signup Section */}
         <div className="border-t border-gray-800 pt-8 mb-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+          {/* <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-center md:text-left">
               <h3 className="text-lg font-semibold mb-2">Stay Updated</h3>
               <p className="text-gray-400 text-sm">Get the latest news and updates delivered to your inbox.</p>
@@ -104,7 +104,7 @@ const Footer = () => {
                 Subscribe
               </button>
             </div>
-          </div>
+          </div> */}
         </div>
         
         {/* Bottom Copyright */}

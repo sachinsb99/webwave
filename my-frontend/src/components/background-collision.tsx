@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState, useRef } from "react";
 import { motion } from "motion/react";
-import { ContainerTextFlipDemo } from "@/components/container-text-flip";
+import { ContainerTextFlipDemo } from "@/components/container-text-flips";
 import GlassBanner from "@/components/glass-banner";
 
 // Change your global declaration at the top

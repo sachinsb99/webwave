@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WebDevController;
 use App\Http\Controllers\AnalyticsController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\NewsletterController;
 
 
 Route::get('/test', function () {
@@ -51,6 +53,31 @@ Route::prefix('web-dev')->group(function () {
     Route::get('/status', [WebDevController::class, 'getSystemStatus']);
 });
 
+// Contact Form Routes
+Route::prefix('contacts')->group(function () {
+    Route::post('/', [ContactController::class, 'store']);           // Submit contact form
+    Route::get('/', [ContactController::class, 'index']);            // Get all messages (admin)
+    Route::get('/{id}', [ContactController::class, 'show']);         // Get single message
+    Route::patch('/{id}/status', [ContactController::class, 'updateStatus']); // Update status
+    Route::delete('/{id}', [ContactController::class, 'destroy']);   // Delete message
+});
+
+// Newsletter Routes
+Route::prefix('newsletter')->group(function () {
+    Route::post('/subscribe', [NewsletterController::class, 'subscribe']);    // Subscribe
+    Route::post('/unsubscribe/{token}', [NewsletterController::class, 'unsubscribe']); // Unsubscribe
+    Route::get('/subscriptions', [NewsletterController::class, 'index']);     // Get all (admin)
+    Route::get('/subscriptions/{id}', [NewsletterController::class, 'show']); // Get single (admin)
+    Route::patch('/subscriptions/{id}/status', [NewsletterController::class, 'updateStatus']); // Update status
+    Route::delete('/subscriptions/{id}', [NewsletterController::class, 'destroy']); // Delete
+    Route::get('/stats', [NewsletterController::class, 'stats']);             // Get statistics (admin)
+});
+
+// Health check endpoint (optional)
 Route::get('/health', function () {
-    return response()->json(['status' => 'ok', 'timestamp' => now()]);
+    return response()->json([
+        'status' => 'ok',
+        'timestamp' => now(),
+        'service' => 'API Service'
+    ]);
 });

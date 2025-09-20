@@ -1,23 +1,53 @@
 "use client"
 import React, { useState } from 'react';
 import { useTheme } from 'next-themes';
+import webDevAPI from '../../api/api'; // Import your API
 
 const NewsLetterBox = () => {
   const { theme } = useTheme();
   const [formData, setFormData] = useState({ name: '', email: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [message, setMessage] = useState<string | null>(null);
+  const [isSuccess, setIsSuccess] = useState(false);
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!formData.name || !formData.email) return;
+
     setIsSubmitting(true);
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    setIsSubmitting(false);
-    setFormData({ name: '', email: '' });
+    setMessage(null);
+
+    try {
+      const result = await webDevAPI.subscribeNewsletter(formData);
+      console.log('Newsletter subscription successful:', result);
+      
+      setIsSuccess(true);
+      setMessage('Successfully subscribed! Welcome to our newsletter.');
+      setFormData({ name: '', email: '' });
+
+    } catch (error: any) {
+      console.error('Newsletter subscription failed:', error);
+      setIsSuccess(false);
+      
+      if (error.status === 422 && error.message.includes('already subscribed')) {
+        setMessage('You are already subscribed to our newsletter.');
+      } else {
+        setMessage(error.message || 'Failed to subscribe. Please try again.');
+      }
+
+    } finally {
+      setIsSubmitting(false);
+      
+      // Clear message after 5 seconds
+      setTimeout(() => {
+        setMessage(null);
+        setIsSuccess(false);
+      }, 5000);
+    }
   };
 
   return (
@@ -37,7 +67,7 @@ const NewsLetterBox = () => {
           </p>
         </div>
 
-        <div className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-4">
           <div className="relative">
             <input
               type="text"
@@ -45,7 +75,9 @@ const NewsLetterBox = () => {
               value={formData.name}
               onChange={handleInputChange}
               placeholder="Enter your name"
-              className="w-full px-4 py-3 bg-white/80 dark:bg-gray-700/80 border border-gray-200/50 dark:border-gray-600/50 rounded-xl text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-transparent transition-all duration-300 backdrop-blur-sm"
+              required
+              disabled={isSubmitting}
+              className="w-full px-4 py-3 bg-white/80 dark:bg-gray-700/80 border border-gray-200/50 dark:border-gray-600/50 rounded-xl text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-transparent transition-all duration-300 backdrop-blur-sm disabled:opacity-50"
             />
           </div>
           
@@ -56,13 +88,15 @@ const NewsLetterBox = () => {
               value={formData.email}
               onChange={handleInputChange}
               placeholder="Enter your email"
-              className="w-full px-4 py-3 bg-white/80 dark:bg-gray-700/80 border border-gray-200/50 dark:border-gray-600/50 rounded-xl text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-transparent transition-all duration-300 backdrop-blur-sm"
+              required
+              disabled={isSubmitting}
+              className="w-full px-4 py-3 bg-white/80 dark:bg-gray-700/80 border border-gray-200/50 dark:border-gray-600/50 rounded-xl text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-transparent transition-all duration-300 backdrop-blur-sm disabled:opacity-50"
             />
           </div>
           
           <button
-            onClick={handleSubmit}
-            disabled={isSubmitting}
+            type="submit"
+            disabled={isSubmitting || !formData.name || !formData.email}
             className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-medium py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-xl"
           >
             {isSubmitting ? (
@@ -74,10 +108,21 @@ const NewsLetterBox = () => {
               'Subscribe Now'
             )}
           </button>
-        </div>
+        </form>
+
+        {/* Success/Error Message */}
+        {message && (
+          <div className={`mt-4 p-3 rounded-lg text-sm ${
+            isSuccess 
+              ? 'bg-green-50 border border-green-200 text-green-700 dark:bg-green-900/50 dark:border-green-800 dark:text-green-300'
+              : 'bg-red-50 border border-red-200 text-red-700 dark:bg-red-900/50 dark:border-red-800 dark:text-red-300'
+          }`}>
+            {message}
+          </div>
+        )}
 
         <p className="text-xs text-gray-500 dark:text-gray-400 text-center mt-4 leading-relaxed">
-          🔒 Your privacy matters. No spam, unsubscribe anytime.
+          Your privacy matters. No spam, unsubscribe anytime.
         </p>
       </div>
 
@@ -95,18 +140,47 @@ const Contact = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [message, setMessage] = useState<string | null>(null);
+  const [isSuccess, setIsSuccess] = useState(false);
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!formData.name || !formData.email || !formData.message) return;
+
     setIsSubmitting(true);
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    setIsSubmitting(false);
-    setFormData({ name: '', email: '', message: '' });
+    setMessage(null);
+
+    try {
+      const result = await webDevAPI.submitContact(formData);
+      console.log('Contact message sent successfully:', result);
+      
+      setIsSuccess(true);
+      setMessage('Message sent successfully! We\'ll get back to you soon.');
+      setFormData({ name: '', email: '', message: '' });
+
+    } catch (error: any) {
+      console.error('Contact form submission failed:', error);
+      setIsSuccess(false);
+      
+      if (error.status === 422) {
+        setMessage('Please check your information and try again.');
+      } else {
+        setMessage(error.message || 'Failed to send message. Please try again.');
+      }
+
+    } finally {
+      setIsSubmitting(false);
+      
+      // Clear message after 5 seconds
+      setTimeout(() => {
+        setMessage(null);
+        setIsSuccess(false);
+      }, 5000);
+    }
   };
 
   return (
@@ -148,7 +222,7 @@ const Contact = () => {
 
               {/* Contact Form */}
               <div className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-lg rounded-3xl p-8 lg:p-12 border border-gray-200/50 dark:border-gray-700/50 shadow-2xl">
-                <div className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
@@ -160,7 +234,9 @@ const Contact = () => {
                         value={formData.name}
                         onChange={handleInputChange}
                         placeholder="Enter your full name"
-                        className="w-full px-4 py-3 bg-white/80 dark:bg-gray-700/80 border border-gray-300 dark:border-gray-600 rounded-xl text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 backdrop-blur-sm"
+                        required
+                        disabled={isSubmitting}
+                        className="w-full px-4 py-3 bg-white/80 dark:bg-gray-700/80 border border-gray-300 dark:border-gray-600 rounded-xl text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 backdrop-blur-sm disabled:opacity-50"
                       />
                     </div>
                     <div>
@@ -173,7 +249,9 @@ const Contact = () => {
                         value={formData.email}
                         onChange={handleInputChange}
                         placeholder="your.email@example.com"
-                        className="w-full px-4 py-3 bg-white/80 dark:bg-gray-700/80 border border-gray-300 dark:border-gray-600 rounded-xl text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 backdrop-blur-sm"
+                        required
+                        disabled={isSubmitting}
+                        className="w-full px-4 py-3 bg-white/80 dark:bg-gray-700/80 border border-gray-300 dark:border-gray-600 rounded-xl text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 backdrop-blur-sm disabled:opacity-50"
                       />
                     </div>
                   </div>
@@ -188,13 +266,15 @@ const Contact = () => {
                       onChange={handleInputChange}
                       rows={6}
                       placeholder="Tell us how we can help you..."
-                      className="w-full px-4 py-3 bg-white/80 dark:bg-gray-700/80 border border-gray-300 dark:border-gray-600 rounded-xl text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-none backdrop-blur-sm"
+                      required
+                      disabled={isSubmitting}
+                      className="w-full px-4 py-3 bg-white/80 dark:bg-gray-700/80 border border-gray-300 dark:border-gray-600 rounded-xl text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-none backdrop-blur-sm disabled:opacity-50"
                     />
                   </div>
                   
                   <button
-                    onClick={handleSubmit}
-                    disabled={isSubmitting}
+                    type="submit"
+                    disabled={isSubmitting || !formData.name || !formData.email || !formData.message}
                     className="w-full sm:w-auto bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-xl"
                   >
                     {isSubmitting ? (
@@ -211,7 +291,18 @@ const Contact = () => {
                       </div>
                     )}
                   </button>
-                </div>
+                </form>
+
+                {/* Success/Error Message */}
+                {message && (
+                  <div className={`mt-6 p-4 rounded-lg ${
+                    isSuccess 
+                      ? 'bg-green-50 border border-green-200 text-green-700 dark:bg-green-900/50 dark:border-green-800 dark:text-green-300'
+                      : 'bg-red-50 border border-red-200 text-red-700 dark:bg-red-900/50 dark:border-red-800 dark:text-red-300'
+                  }`}>
+                    {message}
+                  </div>
+                )}
               </div>
             </div>
           </div>

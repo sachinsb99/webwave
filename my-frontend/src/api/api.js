@@ -159,6 +159,128 @@ class API {
     });
   }
 
+  // ==================== CONTACT FORM APIs ====================
+
+  // 1. Submit Contact Form
+  async submitContact(formData) {
+    this.log('Submitting contact message:', formData);
+    
+    return this.request('/contacts', {
+      method: 'POST',
+      body: JSON.stringify(formData),
+    });
+  }
+
+  // 2. Get all contact messages (admin)
+  async getContacts(page = 1, limit = 10, filters = {}) {
+    const queryParams = new URLSearchParams({
+      page: page.toString(),
+      limit: limit.toString(),
+      ...Object.fromEntries(
+        Object.entries(filters).filter(([_, value]) => value !== '' && value !== null && value !== undefined)
+      )
+    });
+    
+    this.log('Fetching contacts with params:', { page, limit, filters });
+    
+    return this.request(`/contacts?${queryParams}`);
+  }
+
+  // 3. Get single contact message
+  async getContact(id) {
+    this.log('Fetching contact:', id);
+    
+    return this.request(`/contacts/${id}`);
+  }
+
+  // 4. Update contact status
+  async updateContactStatus(id, status, adminNotes = '') {
+    this.log('Updating contact status:', { id, status, adminNotes });
+    
+    return this.request(`/contacts/${id}/status`, {
+      method: 'PATCH',
+      body: JSON.stringify({ status, admin_notes: adminNotes }),
+    });
+  }
+
+  // 5. Delete contact message
+  async deleteContact(id) {
+    this.log('Deleting contact:', id);
+    
+    return this.request(`/contacts/${id}`, {
+      method: 'DELETE',
+    });
+  }
+
+  // ==================== NEWSLETTER APIs ====================
+
+  // 1. Subscribe to newsletter
+  async subscribeNewsletter(formData) {
+    this.log('Subscribing to newsletter:', formData);
+    
+    return this.request('/newsletter/subscribe', {
+      method: 'POST',
+      body: JSON.stringify(formData),
+    });
+  }
+
+  // 2. Unsubscribe from newsletter
+  async unsubscribeNewsletter(token) {
+    this.log('Unsubscribing from newsletter:', token);
+    
+    return this.request(`/newsletter/unsubscribe/${token}`, {
+      method: 'POST',
+    });
+  }
+
+  // 3. Get all newsletter subscriptions (admin)
+  async getNewsletterSubscriptions(page = 1, limit = 10, filters = {}) {
+    const queryParams = new URLSearchParams({
+      page: page.toString(),
+      limit: limit.toString(),
+      ...Object.fromEntries(
+        Object.entries(filters).filter(([_, value]) => value !== '' && value !== null && value !== undefined)
+      )
+    });
+    
+    this.log('Fetching newsletter subscriptions with params:', { page, limit, filters });
+    
+    return this.request(`/newsletter/subscriptions?${queryParams}`);
+  }
+
+  // 4. Get single newsletter subscription
+  async getNewsletterSubscription(id) {
+    this.log('Fetching newsletter subscription:', id);
+    
+    return this.request(`/newsletter/subscriptions/${id}`);
+  }
+
+  // 5. Update newsletter subscription status
+  async updateNewsletterSubscriptionStatus(id, status) {
+    this.log('Updating newsletter subscription status:', { id, status });
+    
+    return this.request(`/newsletter/subscriptions/${id}/status`, {
+      method: 'PATCH',
+      body: JSON.stringify({ status }),
+    });
+  }
+
+  // 6. Delete newsletter subscription
+  async deleteNewsletterSubscription(id) {
+    this.log('Deleting newsletter subscription:', id);
+    
+    return this.request(`/newsletter/subscriptions/${id}`, {
+      method: 'DELETE',
+    });
+  }
+
+  // 7. Get newsletter statistics (admin)
+  async getNewsletterStats() {
+    this.log('Fetching newsletter statistics');
+    
+    return this.request('/newsletter/stats');
+  }
+
   // ==================== UTILITY METHODS ====================
 
   // Test API connection
