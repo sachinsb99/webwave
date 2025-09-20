@@ -1,4 +1,7 @@
+"use client"
 import { cn } from "@/lib/utils";
+import React, { useState } from 'react';
+import WebDevServicePopup from './EnquiryContact';
 
 import {
   IconCode,
@@ -14,6 +17,9 @@ import {
 } from "@tabler/icons-react";
 
 export function FeaturesSectionDemo() {
+  // Move useState INSIDE the component
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
   const features = [
     {
       title: "Custom Web Development",
@@ -101,11 +107,18 @@ export function FeaturesSectionDemo() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <button className="group inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+              <button 
+                onClick={() => setIsPopupOpen(true)}
+                className="group inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              >
                 <IconDeviceDesktop className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
                 Start Your Project
               </button>
-              <button className="inline-flex items-center gap-2 px-8 py-4 border-2 border-neutral-300 dark:border-neutral-700 hover:border-blue-500 dark:hover:border-blue-400 text-neutral-700 dark:text-neutral-300 hover:text-blue-600 dark:hover:text-blue-400 font-semibold rounded-xl transition-all duration-300 hover:bg-blue-50 dark:hover:bg-blue-950/20">
+              
+              <button 
+                onClick={() => setIsPopupOpen(true)}
+                className="inline-flex items-center gap-2 px-8 py-4 border-2 border-neutral-300 dark:border-neutral-700 hover:border-blue-500 dark:hover:border-blue-400 text-neutral-700 dark:text-neutral-300 hover:text-blue-600 dark:hover:text-blue-400 font-semibold rounded-xl transition-all duration-300 hover:bg-blue-50 dark:hover:bg-blue-950/20"
+              >
                 Hire Us
               </button>
             </div>
@@ -119,6 +132,13 @@ export function FeaturesSectionDemo() {
           <Feature key={feature.title} {...feature} index={index} />
         ))}
       </div>
+
+      {/* Add popup at the END of the main component (not inside Feature) */}
+      <WebDevServicePopup 
+        isOpen={isPopupOpen}
+        onClose={() => setIsPopupOpen(false)}
+        autoOpen={false}
+      />
     </section>
   );
 }
