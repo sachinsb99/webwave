@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from 'react';
 import { X, Code, Smartphone, Globe, Zap, CheckCircle, Star, ArrowRight } from 'lucide-react';
+import webDevAPI from '../api/WebDevAPI'; // Uncomment when using the API service
 
 export default function WebDevServicePopup() {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,6 +20,7 @@ export default function WebDevServicePopup() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -85,17 +87,63 @@ export default function WebDevServicePopup() {
 
   const handleSubmit = async () => {
     setIsSubmitting(true);
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    setIsSubmitting(false);
-    setIsSuccess(true);
+    setError(null);
     
-    // Auto close after success
-    setTimeout(() => {
-      setIsOpen(false);
-      setIsSuccess(false);
-      setCurrentStep(1);
-    }, 3000);
+    try {
+      // Using direct fetch for now - replace with webDevAPI.submitLead(formData) when ready
+      const response = await fetch('/api/web-dev/leads', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+          'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]')?.getAttribute('content') || '',
+        },
+        credentials: 'include',
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Failed to submit form');
+      }
+
+      const result = await response.json();
+      
+      // Track successful submission
+      // webDevAPI.trackEvent('lead_submitted', {
+      //   projectType: formData.projectType,
+      //   budget: formData.budget
+      // });
+      
+      setIsSuccess(true);
+      
+      // Auto close after success
+      setTimeout(() => {
+        setIsOpen(false);
+        setIsSuccess(false);
+        setCurrentStep(1);
+        setError(null);
+        // Reset form
+        setFormData({
+          name: '', email: '', mobile: '', company: '',
+          projectType: '', budget: '', timeline: '',
+          query: '', priority: '', source: ''
+        });
+      }, 3000);
+      
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setError(error.message);
+      
+      // Track error
+      // webDevAPI.trackEvent('lead_submission_error', {
+      //   error: error.message,
+      //   formData: formData
+      // });
+      
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const canProceed = () => {
@@ -163,6 +211,11 @@ export default function WebDevServicePopup() {
                 ))}
               </div>
               <p className="text-sm text-gray-500 mt-2">Join 200+ happy clients</p>
+              {error && (
+                <div className="mt-4 p-3 bg-red-50 border border-red-200 rounded-lg">
+                  <p className="text-red-600 text-sm">{error}</p>
+                </div>
+              )}
             </div>
           ) : (
             <>
