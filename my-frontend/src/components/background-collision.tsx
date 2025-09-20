@@ -268,7 +268,7 @@ export function BackgroundBeamsWithCollisionDemo() {
             className="flex flex-col justify-center space-y-8 lg:space-y-12"
           >
             {/* Professional Badge */}
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2, duration: 0.5 }}
@@ -276,7 +276,7 @@ export function BackgroundBeamsWithCollisionDemo() {
             >
               <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
               Professional Web Development
-            </motion.div>
+            </motion.div> */}
 
             {/* Main Heading */}
             <div className="space-y-6">
