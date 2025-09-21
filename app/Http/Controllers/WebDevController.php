@@ -15,7 +15,7 @@ class WebDevController extends Controller
      */
     public function storeLead(Request $request): JsonResponse
     {
-        // Log::info('storeLead: ', $request->all());
+        Log::info('storeLead: ', $request->all());
         try {
             $validated = $request->validate([
                 'name' => 'required|string|max:255',

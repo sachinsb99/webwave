@@ -72,13 +72,13 @@ export function FeaturesSectionDemo() {
     <section className="py-20 bg-white dark:bg-neutral-950">
       {/* Title Card */}
       <div className="max-w-7xl mx-auto px-4 mb-16">
-        <div className="text-center relative">
-          {/* Background Elements */}
-          <div className="absolute inset-0 -top-10">
+        <div className="text-center relative overflow-hidden">
+          {/* Background Elements - Fixed positioning */}
+          <div className="absolute inset-0 -top-10 overflow-hidden">
             <div className="absolute top-10 left-1/4 w-72 h-72 bg-blue-400/10 dark:bg-blue-600/10 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute top-20 right-1/4 w-96 h-96 bg-purple-400/10 dark:bg-purple-600/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+            <div className="absolute top-20 right-1/4 w-72 h-72 bg-purple-400/10 dark:bg-purple-600/10 rounded-full blur-3xl animate-pulse delay-1000 transform translate-x-1/2"></div>
           </div>
-          
+
           {/* Main Content */}
           <div className="relative z-10">
             {/* Badge */}
@@ -107,15 +107,15 @@ export function FeaturesSectionDemo() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <button 
+              <button
                 onClick={() => setIsPopupOpen(true)}
                 className="group inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
               >
                 <IconDeviceDesktop className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
                 Start Your Project
               </button>
-              
-              <button 
+
+              <button
                 onClick={() => setIsPopupOpen(true)}
                 className="inline-flex items-center gap-2 px-8 py-4 border-2 border-neutral-300 dark:border-neutral-700 hover:border-blue-500 dark:hover:border-blue-400 text-neutral-700 dark:text-neutral-300 hover:text-blue-600 dark:hover:text-blue-400 font-semibold rounded-xl transition-all duration-300 hover:bg-blue-50 dark:hover:bg-blue-950/20"
               >
@@ -134,7 +134,7 @@ export function FeaturesSectionDemo() {
       </div>
 
       {/* Add popup at the END of the main component (not inside Feature) */}
-      <WebDevServicePopup 
+      <WebDevServicePopup
         isOpen={isPopupOpen}
         onClose={() => setIsPopupOpen(false)}
         autoOpen={false}
