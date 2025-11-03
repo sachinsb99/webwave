@@ -1,13 +1,11 @@
 import Contact from "@/components/Contact";
-// import { BackgroundBeamsWithCollisionDemo } from "@/components/background-collision";
-import { BackgroundBeamsWithCollisionDemo } from "@/components/hero";
+import { BackgroundBeamsWithCollisionDemo } from "@/components/background-collision";
 import { GlobeDemo } from "@/components/globe-demo";
 import { GoogleGeminiEffectDemo } from "@/components/gemini-connection";
 import { FeaturesSectionDemo } from "@/components/feature2";
 import { TimelineDemo } from "@/components/timeline-demo";
 import { CompareDemo } from '@/components/compare2';
 import WebDevServicePopup from '@/components/EnquiryContact';
-import RippleCustomDemo from "@/components/ripple-main";
 
 import { Metadata } from "next";
 
@@ -20,9 +18,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      {/* <BackgroundBeamsWithCollisionDemo /> */}
-        <BackgroundBeamsWithCollisionDemo />
-        {/* <RippleCustomDemo /> */}
+      <BackgroundBeamsWithCollisionDemo />
       <FeaturesSectionDemo />
       {/* <CompareDemo /> */}
       <TimelineDemo />
@@ -30,7 +26,7 @@ export default function Home() {
       {/* <Blog /> */}
       <GlobeDemo />
       <Contact />
-      {/* <WebDevServicePopup /> */}
+      <WebDevServicePopup />
     </>
   );
 }

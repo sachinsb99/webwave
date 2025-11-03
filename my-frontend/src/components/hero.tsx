@@ -2,7 +2,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { motion } from "motion/react";
 import { ContainerTextFlipDemo } from "@/components/container-text-flips";
-import GlassBanner from "@/components/glass-banner";
+import RippleCustomDemo from "@/components/ripple-main";
 
 // Change your global declaration at the top
 declare global {
@@ -248,14 +248,26 @@ export function BackgroundBeamsWithCollisionDemo() {
   return (
     <div className="relative min-h-screen overflow-hidden">
       {/* Particles.js container */}
-      <div 
+      {/* <div 
         id="particles-js" 
         className="absolute inset-0 z-0"
         style={{
           background: 'black'
         }}
+      /> */}
+      <div 
+        id="particles-js" 
+        className="absolute inset-0 z-0"
+        style={{
+          background: 'linear-gradient(135deg, #0f172a 0%, #1e3a8a 25%, #1e40af 50%, #3b82f6 75%, #60a5fa 100%)'
+        }}
       />
-      
+
+        {/* <div 
+        id="particles-js" 
+        className="absolute inset-0 z-0 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-slate-900 dark:via-blue-950 dark:to-indigo-950"
+      /> */}
+
       {/* Main content */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 md:pt-14">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-screen py-12 sm:py-16 lg:py-20">
@@ -267,16 +279,6 @@ export function BackgroundBeamsWithCollisionDemo() {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="flex flex-col justify-center space-y-8 lg:space-y-12"
           >
-            {/* Professional Badge */}
-            {/* <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2, duration: 0.5 }}
-              className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-full px-4 py-2 text-sm text-white/80 w-fit"
-            >
-              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-              Professional Web Development
-            </motion.div> */}
 
             {/* Main Heading */}
             <div className="space-y-6">
@@ -306,105 +308,6 @@ export function BackgroundBeamsWithCollisionDemo() {
                 From concept to launch, we handle everything so you can focus on growing your business.
               </motion.p>
             </div>
-
-            {/* Professional Stats with Animated Counters */}
-            {/* <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.6 }}
-              className="relative"
-            >
-            
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-2xl blur-xl"
-                animate={{
-                  scale: [1, 1.05, 1],
-                  opacity: [0.3, 0.5, 0.3],
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              />
-              
-              <div className="relative grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 pt-8 pb-6 px-6 border border-white/10 rounded-2xl bg-white/[0.02] backdrop-blur-sm">
-                <motion.div 
-                  className="text-center p-4 rounded-xl bg-white/[0.03] border border-white/5 hover:bg-white/[0.08] transition-all duration-300"
-                  whileHover={{ 
-                    scale: 1.05,
-                    boxShadow: "0 10px 30px rgba(59, 130, 246, 0.1)"
-                  }}
-                >
-                  <AnimatedCounter end={150} suffix="+" duration={2500} />
-                  <motion.div 
-                    className="text-sm text-gray-400 font-medium mt-2"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 1 }}
-                  >
-                    Projects Delivered
-                  </motion.div>
-                </motion.div>
-                
-                <motion.div 
-                  className="text-center p-4 rounded-xl bg-white/[0.03] border border-white/5 hover:bg-white/[0.08] transition-all duration-300"
-                  whileHover={{ 
-                    scale: 1.05,
-                    boxShadow: "0 10px 30px rgba(34, 197, 94, 0.1)"
-                  }}
-                >
-                  <AnimatedCounter end={99} suffix="%" duration={2800} />
-                  <motion.div 
-                    className="text-sm text-gray-400 font-medium mt-2"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 1.2 }}
-                  >
-                    Client Retention
-                  </motion.div>
-                </motion.div>
-                
-                <motion.div 
-                  className="text-center p-4 rounded-xl bg-white/[0.03] border border-white/5 hover:bg-white/[0.08] transition-all duration-300"
-                  whileHover={{ 
-                    scale: 1.05,
-                    boxShadow: "0 10px 30px rgba(251, 191, 36, 0.1)"
-                  }}
-                >
-                  <AnimatedCounter end={4} suffix="★" duration={2200} />
-                  <motion.div 
-                    className="text-sm text-gray-400 font-medium mt-2"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 1.4 }}
-                  >
-                    Average Rating
-                  </motion.div>
-                </motion.div>
-              </div>
-            </motion.div> */}
-
-            {/* Trust Indicators */}
-            {/* <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.7, duration: 0.6 }}
-              className="flex flex-wrap items-center gap-6 text-sm text-gray-400"
-            >
-              <div className="flex items-center gap-2">
-                <div className="w-1 h-1 bg-green-400 rounded-full"></div>
-                <span>Fast 48h Delivery For Landing Page</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-1 h-1 bg-blue-400 rounded-full"></div>
-                <span>Mobile-First Design</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-1 h-1 bg-purple-400 rounded-full"></div>
-                <span>SEO Optimized</span>
-              </div>
-            </motion.div> */}
           </motion.div>
 
           {/* Right Side - UI Demo (Hidden on mobile and tablet) */}
@@ -414,7 +317,8 @@ export function BackgroundBeamsWithCollisionDemo() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="hidden xl:block order-first lg:order-last"
           >
-            <GlassBanner />
+            {/* <GlassBanner /> */}
+            <RippleCustomDemo />
           </motion.div>
           
         </div>
